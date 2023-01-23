@@ -1,4 +1,6 @@
 const express =require("express");
+const { now } = require("mongoose");
+const { date } = require("yup");
 const { update } = require("../models/register_db");
 const routes = express.Router()
 const registerModel =require("../models/register_db")
@@ -19,13 +21,17 @@ routes.get("/registerResults",async(req,res)=>{
 })
 
 // REGISTER OR INSERT DATA
+
 routes.post("/register",async(req,res)=>{
+
     const add_register = new registerModel({
+        
         firstname: req.body.firstname,
         lastname: req.body.lastname,
         email: req.body.email,
         phone: req.body.phone,
         password: req.body.password
+    
     })
     try {
         const save_register= await add_register.save()

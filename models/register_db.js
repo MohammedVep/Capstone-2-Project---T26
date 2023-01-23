@@ -28,14 +28,16 @@ const register_schema = new mongoose.Schema({
         require:true,
         minLength:5,
         maxLength:20
+    },
+    isAccountVerified: {
+        
+        type: String,
+        default:"true"
+    },
+    accountCreated: {
+        type: Date,
+        default: Date.now
     }
-    // isAccountVerified: {
-    //     type: Boolean
-    // },
-    // accountCreated: {
-    //     type: Date,
-    //     default: Date.now
-    // }
     
     
 })

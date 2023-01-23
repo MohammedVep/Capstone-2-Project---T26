@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+.block {
+  position: relative;
+  margin: 50px;
+  height: 100px;
+  font-style: italic;
+  font-size: 40px;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(0deg, #000, #272727);
+}
+
+.block:before,
+.block:after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094,
+      #0000ff, #00ff00, #ffff00, #ff0000);
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: steam 20s linear infinite;
+}
+
+@keyframes steam {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.block:after {
+  filter: blur(50px);
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  font-style: inherit;
+}
+
+
+
+
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.link_wrapper {
+  /* position: relative; */
+  height: 50%;
+  width: 50%;
+
+}
+
+a {
+  margin-left: 20px;
+  display: block;
+  width: 180px;
+  height: 40px;
+  line-height: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  background: #333;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 3px solid tomato;
+  transition: all .35s;
+  margin: 20px;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  border: 3px solid transparent;
+  position: absolute;
+  transform: rotate(180deg);
+  right: 0;
+  top: 0;
+  z-index: -1;
+  transition: all .25s;
+}
+
+.icon svg {
+  width: 30px;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+  transform: rotate(-45deg);
+  fill: #2ecc71;
+  transition: all .35s;
+}
+
+a:hover {
+  width: 200px;
+  border: 3px solid #2ecc71;
+  background: transparent;
+  color: #2ecc71;
+}
+
+a:hover+.icon {
+  border: 3px solid #2ecc71;
+  right: -25%;
+}
+
+
+.mainx {
+  background-color: #00ff00;
+  background-color: wheat;
+  float: right;
+  /* flex-direction: column; */
+  height: 70%;
+  width: 70%;
+  font: 3em sans-serif;
+  margin-right: 54.9px;
+
+
+
+
+
+
+}
