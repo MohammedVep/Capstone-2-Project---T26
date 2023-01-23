@@ -1,6 +1,5 @@
 import './App.css';
-import './App2.css';
-
+// Front End //
 
 function App() {
   return (
