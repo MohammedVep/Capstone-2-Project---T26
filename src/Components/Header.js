@@ -7,6 +7,10 @@ import {
     Link
 } from "react-router-dom";
 
+import About from './About';
+import Features from './Features';
+import Pricing from './Pricing';
+
 export default function Header() {
     return (
         <>
