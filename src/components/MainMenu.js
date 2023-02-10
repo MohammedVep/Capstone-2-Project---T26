@@ -58,6 +58,10 @@ export default function MainMenu() {
                     </tbody>
                     </table>
                 </div>
+                <Switch>
+                    <Route path="/Profile"><Profile /></Route>
+                    <Route path="/BlogPost"><BlogPost /></Route>
+                </Switch>
             </Router>
             
 </>
