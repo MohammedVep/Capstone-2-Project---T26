@@ -1,8 +1,16 @@
 import React from 'react';
+import MainMenu from './MainMenu';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 
-export default function MainMenu() {
+export default function Profile() {
     return (
         <>
+            <Router>
             <h1 className="page-title">Profile</h1>
             <br />
             <div className="component">
@@ -34,11 +42,15 @@ export default function MainMenu() {
                 />
                 <br />
                 <input className="btn btn-primary" type="submit" defaultValue="save" />
-                <a href="../mainMenu.html" className="btn btn-primary" role="button">
-                    Cancel
+                <a className="btn btn-primary" role="button">
+                    <Link to="/">Cancel</Link>
                 </a>
                 </form>
             </div>
+            <Switch>
+                <Route path="/"><MainMenu /></Route>
+            </Switch>
+            </Router>
         </>
     )
 }

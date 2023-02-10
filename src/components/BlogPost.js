@@ -1,8 +1,16 @@
 import React from 'react';
+import MainMenu from './MainMenu';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 
 export default function BlogPost() {
     return (
         <>
+        <Router>
         <h1 className="page-title">Blog Post</h1>
         <br />
         <div className="component">
@@ -13,8 +21,12 @@ export default function BlogPost() {
           <textarea id="content" name="content" rows={20} cols={50} defaultValue={"Enter Content"} />
           <br />
           <input className="btn btn-primary" type="submit" defaultValue="save" />
-          <a href="../mainMenu.html" className="btn btn-primary" role="button">Cancel</a>
+          <a className="btn btn-primary" role="button"><Link to="/">Cancel</Link></a>
         </div>
+        <Switch>
+            <Route path="/"><MainMenu /></Route>
+        </Switch>
+        </Router>
         </>
     )
 }
