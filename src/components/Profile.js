@@ -1,6 +1,6 @@
 import React from 'react';
 
-function MainMenu() {
+export default function MainMenu() {
     return (
         <>
             <h1 className="page-title">Profile</h1>

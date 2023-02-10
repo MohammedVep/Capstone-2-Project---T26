@@ -1,6 +1,6 @@
 import React from 'react';
 
-function BlogPost() {
+export default function BlogPost() {
     return (
         <>
         <h1 className="page-title">Blog Post</h1>
