@@ -54,6 +54,7 @@ export default function UpdateInformation() {
                 <br />
                 <label htmlFor="cvv" className="form-name">CVV: </label>
                 <input type="text" id="cvv" name="cvv" />
+                <input className="btn btn-primary" type="submit" defaultValue="Update info" />
                 <br />
             </div>
         </>
