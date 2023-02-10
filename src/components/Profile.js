@@ -12,7 +12,7 @@ export default function MainMenu() {
                     <span>Change Profile picture</span>
                 </label>
                 <input id="file" type="file" onchange="loadFile(event)" />
-                <img src="../imgs/Profile_Picture.jpg" id="output" width={200} />
+                <img src="../../public/imgs/Profile_Picture.jpg" id="output" width={200} />
                 <br />
                 </div>
                 <br />
