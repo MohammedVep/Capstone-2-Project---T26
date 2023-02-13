@@ -40,18 +40,6 @@ export default function UpdateInformation() {
                 <label htmlFor="cpassword" className="form-name">Confirm Password: </label>
                 <input type="password" id="cpassword" name="cpassword" />
                 <br />
-                <label htmlFor="cname" className="form-name">Credit Card Name: </label>
-                <input type="text" id="cname" name="cname" />
-                <br />
-                <label htmlFor="ccnum" className="form-name">Credit Card Number: </label>
-                <input type="text" id="ccnum" name="ccnum" />
-                <br />
-                <label htmlFor="expmonth" className="form-name">Exp Month: </label>
-                <input type="text" id="expmonth" name="expmonth" />
-                <br />
-                <label htmlFor="expyear" className="form-name">Exp Year: </label>
-                <input type="text" id="expyear" name="expyear" />
-                <br />
                 <label htmlFor="cvv" className="form-name">CVV: </label>
                 <input type="text" id="cvv" name="cvv" />
                 <input className="btn btn-primary" type="submit" defaultValue="Update info" />
