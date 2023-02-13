@@ -1,0 +1,127 @@
+.profile-pic {
+  color: transparent;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.profile-pic input {
+  display: none;
+}
+.profile-pic img {
+  position: absolute;
+  object-fit: cover;
+  width: 165px;
+  height: 165px;
+  box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.35);
+  border-radius: 100px;
+  z-index: 0;
+}
+.profile-pic .-label {
+  cursor: pointer;
+  height: 165px;
+  width: 165px;
+}
+.profile-pic:hover .-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10000;
+  color: #fafafa;
+  transition: background-color 0.2s ease-in-out;
+  border-radius: 100px;
+  margin-bottom: 0;
+}
+.profile-pic span {
+  display: inline-flex;
+  padding: 0.2em;
+  height: 2em;
+}
+
+body {
+  height: 100vh;
+  background-color: #191815;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body a:hover {
+  text-decoration: none;
+}
+
+.page-title {
+  font-size: 30px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: pink;
+  text-align: center;
+}
+
+.background{
+  background-color: blue;
+}
+
+.component {
+  background-color: gray;
+  margin: auto;
+  width: 50%;
+  border: 3px solid yellow;
+  padding: 10%;
+}
+
+.main-menu {
+  border: 4px solid orange;
+  border-radius: 5px;
+  margin: auto;
+  width: 50%;
+  padding: 10%;
+}
+
+.profile {
+  background-color: red;
+}
+
+.get-help {
+  background-color: cyan;
+}
+
+.blog-post {
+  background-color:aquamarine;
+}
+
+.sign-out {
+  background-color: green
+}
+
+.update-information {
+  background-color:darkmagenta;
+}
+
+.close-account {
+  background-color:sandybrown;
+}
+
+.student-menu-text {
+  color: white;
+  font-size: medium;
+  text-align: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.footer {
+  background-color: yellowgreen;
+}
+
+.copyright {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size:small;
+  color: black;
+}
+
+.form-name{
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
