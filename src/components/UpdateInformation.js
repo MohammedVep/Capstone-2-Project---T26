@@ -40,8 +40,15 @@ export default function UpdateInformation() {
                 <label htmlFor="cpassword" className="form-name">Confirm Password: </label>
                 <input type="password" id="cpassword" name="cpassword" />
                 <br />
-                <label htmlFor="cvv" className="form-name">CVV: </label>
-                <input type="text" id="cvv" name="cvv" />
+                <label htmlFor="transitN" className="form-name">Transit Number: </label>
+                <input type="text" id="transitN" name="transitN" />
+                <br />
+                <label htmlFor="accN" className="form-name">Account Number: </label>
+                <input type="text" id="accN" name="accN" />
+                <br />
+                <label htmlFor="branchN" className="form-name">Branch Number: </label>
+                <input type="text" id="branchN" name="branchN" />
+                <br />
                 <input className="btn btn-primary" type="submit" defaultValue="Update info" />
                 <br />
             </div>
