@@ -12,7 +12,13 @@ export default function GetHelp() {
         <h1 className="page-title">Get Help</h1>
         <br />
         <div className="component">
-          
+          <table className="table">
+            <tbody className="tutor-list">
+                <tr>
+                    <td></td>
+                </tr>
+            </tbody>
+          </table>
         </div>
         
         </>
