@@ -8,6 +8,7 @@ import {
 
 import BlogPost from './BlogPost';
 import Profile from './Profile';
+import UpdateInformation from './UpdateInformation';
 
 export default function MainMenu() {
     return (
@@ -44,9 +45,9 @@ export default function MainMenu() {
                         <td className="update-information">
                             <a
                             className="student-menu-text"
-                            href="update-information/updateInformation.html"
-                            >
+                            ><Link to="/UpdateInformation">
                             Update Information
+                            </Link>
                             </a>
                         </td>
                         <td className="close-account">
@@ -61,6 +62,7 @@ export default function MainMenu() {
                 <Switch>
                     <Route path="/Profile"><Profile /></Route>
                     <Route path="/BlogPost"><BlogPost /></Route>
+                    <Route path="/UpdateInformation"><UpdateInformation /></Route>
                 </Switch>
             </Router>
             
