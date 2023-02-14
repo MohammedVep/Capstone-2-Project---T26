@@ -8,6 +8,8 @@ import {
 
 import BlogPost from './BlogPost';
 import Profile from './Profile';
+import HelpStudent from './HelpStudent';
+import UpdateInformation from './UpdateInformation';
 
 export default function MainMenu() {
     return (
@@ -25,9 +27,9 @@ export default function MainMenu() {
                             </p>
                         </td>
                         <td className="get-help">
-                            <a className="student-menu-text" href="">
-                            Help Student
-                            </a>
+                            <p className="student-menu-text" href="">
+                            <Link to="/HelpStudent">Help Student</Link>
+                            </p>
                         </td>
                         <td className="blog-post">
                             <a className="student-menu-text">
@@ -42,12 +44,11 @@ export default function MainMenu() {
                             </a>
                         </td>
                         <td className="update-information">
-                            <a
+                            <p
                             className="student-menu-text"
-                            href="update-information/updateInformation.html"
                             >
-                            Update Information
-                            </a>
+                            <Link to="/UpdateInformation">Update Information</Link>
+                            </p>
                         </td>
                         <td className="close-account">
                             <a className="student-menu-text" href="">
@@ -61,6 +62,8 @@ export default function MainMenu() {
                 <Switch>
                     <Route path="/Profile"><Profile /></Route>
                     <Route path="/BlogPost"><BlogPost /></Route>
+                    <Route path="/HelpStudent"><HelpStudent /></Route>
+                    <Route path="/UpdateInformation"><UpdateInformation /></Route>
                 </Switch>
             </Router>
             
