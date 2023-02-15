@@ -24,22 +24,31 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const VideoPlayer = () => {
+  const {name, callAccepted, myVideo, userVideo, callEnded, stream, call} = useContext(SocketContext)
   const classes = useStyles();
   return (
     <Grid container className={classes.gridContainer}>
-      <Paper className={classes.paper}>
-        <Grid item xs={12} md={6}>
-          <Typography variant="h5" gutterBottom>Name</Typography>
-          <video playsInLine muted ref={"myVideo"} autoPlay className={classess.video}/>
-        </Grid>
-      </Paper>
-
-      <Paper className={classes.paper}>
-        <Grid item xs={12} md={6}>
-          <Typography variant="h5" gutterBottom>Name</Typography>
-          <video playsInLine muted ref={"userVideo"} autoPlay className={classess.video}/>
-        </Grid>
-      </Paper>
+      {
+        stream && (
+          <Paper className={classes.paper}>
+        `````<Grid item xs={12} md={6}>
+                <Typography variant="h5" gutterBottom>{name ||' Name'}</Typography>
+                <video playsInLine muted ref={myVideo} autoPlay className={classess.video}/>
+              </Grid>
+          </Paper>
+          )
+        }
+        
+        {
+          callAccepted && !callEnded && (
+            <Paper className={classes.paper}>
+                <Grid item xs={12} md={6}>
+                  <Typography variant="h5" gutterBottom>{call.name || 'Name'}</Typography>
+                  <video playsInLine muted ref={userVideo} autoPlay className={classess.video}/>
+                </Grid>
+            </Paper>
+          )
+          } 
     </Grid>
   )
 }
