@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
-const PORT = 4000
+const PORT = 4000;
+const puppeteer = require("puppeteer");
+const PuppeteerMassScreenshots = require("./screen.shooter");
 
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
@@ -17,7 +19,19 @@ const socketIO = require('socket.io')(http, {
 socketIO.on('connection', (socket) => {
     console.log(`${socket.id} user just connected!`);
     socketIO.on("browse", async ({ url }) => {
-        console.log("Here is the URL >>>> ", url);
+        const browser = await puppeteer.launch({
+            headless: true,
+        });
+        const context = await browser.createIncognitoBrowserContext();
+        const page = await context.newPage();
+        await page.setViewport({
+            width: 1255,
+            height: 800,
+        });
+        await page.goto(url);
+        const screenshots = new PuppeteerMassScreenshots();
+        await screenshots.init(page, socket);
+        await screenshots.start();
     });
     socketIO.on('disconnect', () => {
         socketIO.disconnect();

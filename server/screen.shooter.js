@@ -51,5 +51,23 @@ const defaultAfterWritingNewFile = async (filename) =>
             return this.socket.emit("image", {img: data, fullHeight});
         }
 
-        
+        async start(options = {}) {
+            const startOptions = {
+                format: "jpeg",
+                quality: 10,
+                everyNthFrame: 1,
+                ...options,
+            };
+            try {
+                await this.client?.send("Page.startScreencast", startOptions);
+            } catch (err) {}
+        }
+
+        async stop() {
+            try {
+                await this.client?.send("Page.stopScreencast");
+            } catch (err) {}
+        }
     }
+
+    module.exports = PuppeteerMassScreenshots;
