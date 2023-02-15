@@ -1,4 +1,4 @@
-import { useState, useCallBack, useRef, useEffect } from "react"
+import { useState, useCallback, useRef, useEffect } from "react"
 import socketIO from 'socket.io-client'
 const socket = socketIO.connect("http://localhost:4000");
 
@@ -47,7 +47,7 @@ const Modal = ({url}) => {
         });
     }, []);
 
-    const mouseScroll = useCallBack((event) => {
+    const mouseScroll = useCallback((event) => {
         const position = event.currentTarget.scrollTop;
         socket.emit("scroll", {
             position,

@@ -1,10 +1,10 @@
-import React, { useCallBack, useState} from "react"
+import React, { useCallback, useState} from "react"
 import Modal from "./Modal"
 
 const Home = () => {
     const [url, setURL] = useState("");
     const [show, setShow] = useState(false);
-    const handleCreateChannel = useCallBack(() => {
+    const handleCreateChannel = useCallback(() => {
         setShow(true)
     }, []);
     return (
