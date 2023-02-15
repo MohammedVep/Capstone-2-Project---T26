@@ -16,7 +16,11 @@ const socketIO = require('socket.io')(http, {
 
 socketIO.on('connection', (socket) => {
     console.log(`${socket.id} user just connected!`);
+    socketIO.on("browse", async ({ url }) => {
+        console.log("Here is the URL >>>> ", url);
+    });
     socketIO.on('disconnect', () => {
+        socketIO.disconnect();
         console.log('Disconnected');
     });
 });
