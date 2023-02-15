@@ -1,11 +1,12 @@
-import { useState } from "react"
+import { useState, useCallback, useRef, useEffect } from "react"
 import socketIO from 'socket.io-client'
 const socket = socketIO.connect("http://localhost:4000");
 
 const Modal = ({url}) => {
     const [image, setImage] = useState("");
     const [fullHeight, setFullHeight] = useState("")
-    
+    const ref = useRef(null);
+    const [cursor, setCursor] = useState("");
 
     useEffect(() => {
         socket.emit("browse", {

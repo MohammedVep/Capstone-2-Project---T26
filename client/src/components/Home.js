@@ -4,7 +4,7 @@ import Modal from "./Modal"
 const Home = () => {
     const [url, setURL] = useState("");
     const [show, setShow] = useState(false);
-    const handleCreateChannel = useCallback(() => {
+    const handleCreateChannel = useCallBack(() => {
         setShow(true)
     }, []);
     return (
