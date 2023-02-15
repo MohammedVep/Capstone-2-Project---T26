@@ -16,6 +16,12 @@ const socketIO = require('socket.io')(http, {
     }
 });
 
+app.use(cors());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+let channelList = [];
+
 socketIO.on('connection', (socket) => {
     console.log(`${socket.id} user just connected!`);
     socket.on("browse", async ({ url }) => {
@@ -53,13 +59,14 @@ socketIO.on('connection', (socket) => {
                 window.scrollTo({ top });
             }, position)
         });
+
+        socket.on("mouseClick", async ({ x, y }) => {
+            try {
+                await page.mouse.click(x, y);
+            } catch (err) {}
+        });
     });
 
-    socket.on("mouseClick", async ({ x, y }) => {
-        try {
-            await page.mouse.click(x, y);
-        } catch (err) {}
-    });
     socket.on('disconnect', () => {
         socket.disconnect();
         console.log('Disconnected');
