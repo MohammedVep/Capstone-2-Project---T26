@@ -18,7 +18,7 @@ const socketIO = require('socket.io')(http, {
 
 socketIO.on('connection', (socket) => {
     console.log(`${socket.id} user just connected!`);
-    socketIO.on("browse", async ({ url }) => {
+    socket.on("browse", async ({ url }) => {
         const browser = await puppeteer.launch({
             headless: true,
         });
@@ -32,9 +32,36 @@ socketIO.on('connection', (socket) => {
         const screenshots = new PuppeteerMassScreenshots();
         await screenshots.init(page, socket);
         await screenshots.start();
+        socket.on("mouseMove", async ({x, y}) => {
+            try {
+                await page.mouse.move(x, y);
+                const cur = await page.evaluate(
+                    (p) => {
+                        const elementFromPoint = document.elementFromPoint(p.x, p.y);
+                        return window
+                            .getComputedStyle(elementFromPoint, null)
+                            .getPropertyValue("cursor");
+                    },
+                    {x, y}
+                );
+                socket.emit("cursor", cur);
+            } catch (err) {}
+        });
+
+        socket.on("scroll", ({ position}) => {
+            page.evaluate((top) => {
+                window.scrollTo({ top });
+            }, position)
+        });
     });
-    socketIO.on('disconnect', () => {
-        socketIO.disconnect();
+
+    socket.on("mouseClick", async ({ x, y }) => {
+        try {
+            await page.mouse.click(x, y);
+        } catch (err) {}
+    });
+    socket.on('disconnect', () => {
+        socket.disconnect();
         console.log('Disconnected');
     });
 });
