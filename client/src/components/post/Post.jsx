@@ -1,30 +1,32 @@
 import "./post.css";
-
-export default function Post() {
+import {Link} from "react-router-dom";
+export default function Post({post}) {
   return (
     <div className='post'>
-        <img 
+        {post.photo && (
+            <img 
             className='postImg'
-            src="https://www.pexels.com/photo/photo-of-cloudy-sky-during-golden-hour-14677839/"
+            src={post.photo}
             alt=""
         />
+        )}
+        
         <div className="postInfo">
             <div className="postCats">
-                <span className="postCat">Computer Science</span>
-                <span className="postCat">Other</span>
+                {post.categories.map((c) => (
+                    <span className="postCat">{c.name}</span>
+                ))}
             </div>
-            <span className="postTitle">
-                Lorem ipsum dolor sit amet
-            </span>
+            <Link to={`/post/${post._id}`} className="link">
+                <span className="postTitle">
+                    {post.title}
+                </span>
+            </Link>
             <hr />
-            <span className="postDate">1 hour ago</span>
+            <span className="postDate">{new Date(post.createdAt).toDateString()}</span>
         </div>
         <p className="postDesc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem enim facere aperiam non suscipit ducimus! Autem minus officia ut hic fugit, at, nisi dicta voluptas provident debitis sapiente, temporibus commodi.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem enim facere aperiam non suscipit ducimus! Autem minus officia ut hic fugit, at, nisi dicta voluptas provident debitis sapiente, temporibus commodi.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem enim facere aperiam non suscipit ducimus! Autem minus officia ut hic fugit, at, nisi dicta voluptas provident debitis sapiente, temporibus commodi.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem enim facere aperiam non suscipit ducimus! Autem minus officia ut hic fugit, at, nisi dicta voluptas provident debitis sapiente, temporibus commodi.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem enim facere aperiam non suscipit ducimus! Autem minus officia ut hic fugit, at, nisi dicta voluptas provident debitis sapiente, temporibus commodi.
+            {post.desc}
         </p>
     </div>
   )
