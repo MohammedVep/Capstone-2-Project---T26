@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const dotemv = require('dotemv');
+const dotenv = require('dotev');
 const mongoose = require('mongoose');
 const authRoute = require('./routes/auth');
 const usersRoute = require('./routes/users');
@@ -8,7 +8,7 @@ const postRoute = require('./routes/posts');
 const categoriesRoute = require('./routes/categories');
 const multer = require("multer");
 
-dotemv.config()
+dotenv.config()
 app.use(express.json());
 
 mongoose.connect(process.eventNames.MONGO_URL, {
