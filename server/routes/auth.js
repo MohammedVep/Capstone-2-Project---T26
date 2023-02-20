@@ -9,10 +9,13 @@ router.post("/auth", async (req, res) => {
     if (error) {
       return res.status(401).send(error.details[0].message);
     }
+    console.log(req.body)
     const tutor = await Tutor.findOne({ email: req.body.email });
+
     if (!tutor) {
       return res.status(401).send("Invalid email or password.");
     }
+
     const validPassword = await bcrypt.compare(
       req.body.password,
       tutor.password

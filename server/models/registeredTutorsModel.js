@@ -34,6 +34,8 @@ const registeredTutorSchema = new mongoose.Schema({
     }
 });
 
+console.log( process.env.JWT_PRIVATE_KEY)
+
 registeredTutorSchema.methods.generateAuthToken = function () {
     const token = jwt.sign({_id: this._id}, process.env.JWT_PRIVATE_KEY,
         {expiresIn: '1h'})

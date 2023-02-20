@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Tutor, validateTutor } = require("../models/registeredTutorsModels.js");
+const { Tutor, validateTutor } = require("../models/registeredTutorsModel.js");
 const bcrypt = require("bcrypt");
 
 
@@ -8,6 +8,7 @@ router.post("/signup/tutor", async (req, res) => {
   try {
     const { error } = validateTutor(req.body);
     if (error) {
+        console.log(error)
       return res.status(401).send(error.details[0].message);
     }
     const tutor = await Tutor.findOne({ email: req.body.email });

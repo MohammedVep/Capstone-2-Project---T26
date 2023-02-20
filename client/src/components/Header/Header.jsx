@@ -11,6 +11,7 @@ import About from '../About/About';
 import Features from '../Features/Features';
 import Pricing from '../Pricing/Pricing';
 import BecomeTutor from '../BecomeTutor/BecomeTutor';
+import ApplyTutor from '../BecomeTutor/ApplyTutor';
 import Benefits from '../Benefits/Benefits';
 import Home from '../Home/Home';
 import Login from '../Login/Login';
@@ -44,6 +45,7 @@ const Header = () => {
                 <Route path="/Features" element={<Features />}/>
                 <Route path="/Pricing" element={<Pricing />}/>
                 <Route path="/BecomeTutor" element={<BecomeTutor />}/>
+                <Route path="/ApplyTutor" element={<ApplyTutor />}/>
                 <Route path="/Benefits" element={<Benefits />}/>
                 <Route path="/Signup" element={<Signup />}/>
                 <Route path="/Login" element={<Login />}/>
