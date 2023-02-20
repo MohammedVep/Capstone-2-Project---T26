@@ -13,6 +13,8 @@ import Pricing from '../Pricing/Pricing';
 import BecomeTutor from '../BecomeTutor/BecomeTutor';
 import Benefits from '../Benefits/Benefits';
 import Home from '../Home/Home';
+import Login from '../Login/Login';
+import Signup from '../Signup/Signup';
 
 import HeaderImg from '../../images/100-header.png'
 import AboutImg from '../../images/about.png'
@@ -33,8 +35,8 @@ const Header = () => {
                 <div className="pricing"> <img src={PricingImg} alt="price" width={50} height={50} /><Link to="/Pricing">Pricing</Link></div>  
                 <div className="benefits"> <img src={BenefitImg} alt="benefits" width={50} height={50} /><Link to="/Benefits">Benefits</Link></div>
                 <div className="becomeTutor"><img src={TutorialImg} alt="tutorial" width={50} height={50} /><Link to="/BecomeTutor">Become Tutor</Link></div>
-                <div className="register"> <img src={RegisterImg} alt="register" width={50} height={50} /><a href="/register">Register</a></div>
-                <div className="login"> <img src={LoginImg} alt="login" width={50} height={50} /><a href="/login">Login</a></div>
+                <div className="register"> <img src={RegisterImg} alt="register" width={50} height={50} /><Link to="/Signup">Register</Link></div>
+                <div className="login"> <img src={LoginImg} alt="login" width={50} height={50} /><Link to="/login">Login</Link></div>
             </div>
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -43,6 +45,8 @@ const Header = () => {
                 <Route path="/Pricing" element={<Pricing />}/>
                 <Route path="/BecomeTutor" element={<BecomeTutor />}/>
                 <Route path="/Benefits" element={<Benefits />}/>
+                <Route path="/Signup" element={<Signup />}/>
+                <Route path="/Login" element={<Login />}/>
             </Routes>
         </BrowserRouter>
     
