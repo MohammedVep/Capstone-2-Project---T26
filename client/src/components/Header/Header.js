@@ -1,4 +1,9 @@
 import React from 'react'
+import About from '../About/About';
+import Features from '../Features/Features';
+import Pricing from '../Pricing/Pricing';
+import BecomeTutor from '../BecomeTutor/BecomeTutor';
+import Benefits from '../Benefits/Benefits';
 
 import {
     BrowserRouter as Router,
