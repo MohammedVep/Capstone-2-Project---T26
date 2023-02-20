@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 import { useState } from "react";
 import axios from "axios";
+import Payment from "./Payment";
 import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
@@ -116,9 +117,7 @@ const Signup = () => {
 
             {error && <div className={styles.erro_msg}>{error}</div>}
 
-            <button type="submit" className={styles.green_btn}>
-              Sign Up
-            </button>
+            <Link to='/Payment'></Link>
           </form>
         </div>
       </div>
