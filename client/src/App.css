@@ -97,8 +97,8 @@
 
  .header-benefits{
   background-color:#d8f0c0;
-  width: 350px;
-  height: 300px;
+  /* width: 350px;
+  height: 300px; */
   justify-content: center;
   text-shadow: #94b1d6;
   text-align: center;
@@ -129,8 +129,8 @@
 
   .header-features{
     background-color:#d8f0c0;
-    width: 350px;
-    height: 300px;
+    /* width: 350px;
+    height: 300px; */
     justify-content: center;
     text-shadow: #94b1d6;
     text-align: center;
@@ -159,8 +159,8 @@
     .header-pricing{
       background-color:#d8f0c0;
       
-      width: 350px;
-      height: 300px;
+      /* width: 350px; */
+      /* height: 300px; */
       justify-content: center;
       text-shadow: #94b1d6;
       text-align: center;
@@ -188,8 +188,8 @@
       .header-tutoring{
         background-color:#d8f0c0;
         
-        width: 350px;
-        height: 300px;
+        /* width: 350px; */
+        /* height: 300px; */
         justify-content: center;
         text-shadow: #94b1d6;
         text-align: center;
