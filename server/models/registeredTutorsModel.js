@@ -31,6 +31,18 @@ const registeredTutorSchema = new mongoose.Schema({
     isTutor: {
         type: Boolean,
         default: true
+    },
+    transitN: {
+        type: String,
+        required: true
+    },
+    accN: {
+        type: String,
+        required: true
+    },
+    branchN: {
+        type: String,
+        required: true
     }
 });
 

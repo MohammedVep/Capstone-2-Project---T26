@@ -5,12 +5,11 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const Payment = () => {
+const PayInfo = () => {
     const [data, setData] = useState({
-        creditCardNum: "",
-        expyDate: "",
-        securityCode: "",
-        cardHolderName: "",
+        accN: "",
+        transitN: "",
+        branchN: "",
       });
     
       const [error, setErrors] = useState("");
@@ -24,7 +23,7 @@ const Payment = () => {
       const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const url = "http://locahost:4000/api/signup/user";
+          const url = "http://localhost:4000/api/signup/tutor";
           const { data: res } = await axios.post(url, data);
           navigate("/login");
           console.log(res.message);
@@ -62,33 +61,13 @@ const Payment = () => {
             </div>
             <div className={styles.right}>
               <form className={styles.form_container} onSubmit={handleSubmit}>
-                <h1>Credit Card Information</h1>
+                <h1>Pay Information</h1>
     
                 <input
                   type="text"
-                  placeholder="Credit Card Number"
-                  name="creditCardNum"
-                  value={data.creditCardNum}
-                  required
-                  className={styles.input}
-                  onChange={handleChange}
-                />
-    
-                <input
-                  type="text"
-                  placeholder="Exiry Date"
-                  name="expyDate"
-                  value={data.expyDate}
-                  required
-                  className={styles.input}
-                  onChange={handleChange}
-                />
-    
-                <input
-                  type="number"
-                  placeholder="Security Code"
-                  name="securityCode"
-                  value={data.securityCode}
+                  placeholder="Account Number"
+                  name="accN"
+                  value={data.accN}
                   required
                   className={styles.input}
                   onChange={handleChange}
@@ -96,14 +75,23 @@ const Payment = () => {
     
                 <input
                   type="text"
-                  placeholder="Card holder name"
-                  name="cardHolderName"
-                  value={data.cardHolderName}
+                  placeholder="Transit Number"
+                  name="transitN"
+                  value={data.transitN}
                   required
                   className={styles.input}
                   onChange={handleChange}
                 />
-                
+    
+                <input
+                  type="text"
+                  placeholder="Branch Number"
+                  name="branchN"
+                  value={data.branchN}
+                  required
+                  className={styles.input}
+                  onChange={handleChange}
+                />
     
                 {error && <div className={styles.erro_msg}>{error}</div>}
     
@@ -118,4 +106,4 @@ const Payment = () => {
       );
 }
 
-export default Payment
+export default PayInfo

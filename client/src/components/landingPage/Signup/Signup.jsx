@@ -27,7 +27,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://locahost:4000/api/signup/tutor";
+      const url = "http://locahost:4000/api/signup/user";
       const { data: res } = await axios.post(url, data);
       navigate("/login");
       console.log(res.message);
@@ -118,8 +118,10 @@ const Signup = () => {
             />
 
             {error && <div className={styles.erro_msg}>{error}</div>}
-
-            <Link to='/Payment'></Link>
+              <button type="submit" className={styles.green_btn}>
+                <Link to='/Payment'>Apply Now</Link>
+              </button>
+            
           </form>
         </div>
       </div>

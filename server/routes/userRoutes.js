@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 
 
 // REGISTER User
-router.post("/signup/User", async (req, res) => {
+router.post("/signup/user", async (req, res) => {
   try {
     const { error } = validateUser(req.body);
     if (error) {
@@ -28,7 +28,7 @@ router.post("/signup/User", async (req, res) => {
 
 
 // GET ALL REGISTERED UserS
-router.get("/User/result", async (req, res) => {
+router.get("/user/result", async (req, res) => {
   try {
     const data = await User.find();
     res.status(201).json(data);
