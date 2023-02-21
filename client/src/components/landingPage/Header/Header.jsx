@@ -16,15 +16,16 @@ import Benefits from '../Benefits/Benefits';
 import Home from '../Home/Home';
 import Login from '../Login/Login';
 import Signup from '../Signup/Signup';
+import Payment from '../Signup/Payment';
 
-import HeaderImg from '../../images/100-header.png'
-import AboutImg from '../../images/about.png'
-import WebCamImg from '../../images/webcam.png'
-import PricingImg from '../../images/best-price.png'
-import BenefitImg from '../../images/benefits.png'
-import TutorialImg from '../../images/tutorial.png'
-import RegisterImg from '../../images/tutorial_logo.png'
-import LoginImg from '../../images/login.png'
+import HeaderImg from '../../../images/100-header.png'
+import AboutImg from '../../../images/about.png'
+import WebCamImg from '../../../images/webcam.png'
+import PricingImg from '../../../images/best-price.png'
+import BenefitImg from '../../../images/benefits.png'
+import TutorialImg from '../../../images/tutorial.png'
+import RegisterImg from '../../../images/tutorial_logo.png'
+import LoginImg from '../../../images/login.png'
   
 const Header = () => {
   return (
@@ -49,6 +50,7 @@ const Header = () => {
                 <Route path="/Benefits" element={<Benefits />}/>
                 <Route path="/Signup" element={<Signup />}/>
                 <Route path="/Login" element={<Login />}/>
+                <Route path="/Payment" element={<Payment />}/>
             </Routes>
         </BrowserRouter>
     

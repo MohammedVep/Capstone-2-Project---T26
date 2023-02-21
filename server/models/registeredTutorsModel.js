@@ -42,9 +42,9 @@ registeredTutorSchema.methods.generateAuthToken = function () {
         return token;
 }
 
-const Tutor = mongoose.model('use', registeredTutorSchema);
+const Tutor = mongoose.model('tutor', registeredTutorSchema);
 
-const validateTutor = (tutor) => {
+const validateTutor = (Tutor) => {
     const schema = Joi.object({
         firstname: Joi.string().required().label('First Name'),
         lastname: Joi.string().required().label('Last Name'),
@@ -52,7 +52,7 @@ const validateTutor = (tutor) => {
         phone: Joi.number().required().label('Phone'),
         password: paswordComplexity().required().label('Password')
     });
-    return schema.validate(tutor);
+    return schema.validate(Tutor);
 }
 
 module.exports = {Tutor, validateTutor};
