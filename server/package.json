@@ -19,6 +19,8 @@
     "joi": "^17.8.1",
     "joi-password-complexity": "^5.1.0",
     "jsonwebtoken": "^9.0.0",
-    "mongoose": "^6.9.2"
+    "mongoose": "^6.9.2",
+    "puppeteer": "^19.7.2",
+    "socket.io": "^4.6.1"
   }
 }
