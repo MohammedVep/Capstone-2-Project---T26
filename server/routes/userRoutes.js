@@ -6,12 +6,15 @@ const bcrypt = require("bcrypt");
 // REGISTER User
 router.post("/signup/user", async (req, res) => {
   try {
+    console.log('signup user ===', req.body)
     const { error } = validateUser(req.body);
     if (error) {
       return res.status(401).send(error.details[0].message);
     }
-    const User = await User.findOne({ email: req.body.email });
-    if (User) {
+
+
+    const user = await User.findOne({ email: req.body.email });
+    if (user) {
       return res.status(401).send("User already registered.");
     }
 

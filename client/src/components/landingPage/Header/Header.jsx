@@ -17,6 +17,8 @@ import Home from '../Home/Home';
 import Login from '../Login/Login';
 import Signup from '../Signup/Signup';
 import Payment from '../Signup/Payment';
+import ChatApp from '../../registeredUsers/ChatApp';
+import MainMenu from '../../registeredUsers/MainMenu';
 
 import HeaderImg from '../../../images/100-header.png'
 import AboutImg from '../../../images/about.png'
@@ -51,6 +53,8 @@ const Header = () => {
                 <Route path="/Signup" element={<Signup />}/>
                 <Route path="/Login" element={<Login />}/>
                 <Route path="/Payment" element={<Payment />}/>
+                <Route path="/ChatApp" element={<ChatApp />}/>
+                <Route path="/MainMenu" element={<MainMenu />}/>
             </Routes>
         </BrowserRouter>
     

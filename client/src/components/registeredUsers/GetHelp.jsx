@@ -5,6 +5,7 @@ import {
     Route,
     Link
 } from "react-router-dom"
+import ChatApp from '../registeredUsers/ChatApp'
 
 
 const GetHelp = () => {
@@ -22,9 +23,9 @@ const GetHelp = () => {
             </tbody>
           </table>
         </div>
-        <Routes>
+        {/* <Routes>
             <Route path="/ChatApp" element={<ChatApp />}/>
-        </Routes>
+        </Routes> */}
         </BrowserRouter>
         </>
   )

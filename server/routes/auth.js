@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { Tutor } = require("../models/registeredTutorsModel");
 const Joi = require("joi");
 const bcrypt = require("bcrypt");
+const { User } = require("../models/registeredUsersModel");
 
 router.post("/auth", async (req, res) => {
   try {
@@ -10,7 +11,8 @@ router.post("/auth", async (req, res) => {
       return res.status(401).send(error.details[0].message);
     }
     console.log(req.body)
-    const tutor = await Tutor.findOne({ email: req.body.email });
+    const tutor = await User.findOne({ email: req.body.email });
+    // const tutor = await Tutor.findOne({ email: req.body.email });
 
     if (!tutor) {
       return res.status(401).send("Invalid email or password.");

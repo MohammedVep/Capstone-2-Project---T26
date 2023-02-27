@@ -24,7 +24,7 @@ const Payment = () => {
       const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const url = "http://locahost:4000/api/signup/user";
+          const url = "http://localhost:4000/api/user/signup/user";
           const { data: res } = await axios.post(url, data);
           navigate("/login");
           console.log(res.message);

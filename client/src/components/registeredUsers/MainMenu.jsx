@@ -17,7 +17,7 @@ import {
 const MainMenu = () => {
   return (
         <>
-            <BrowserRouter>
+            {/* <BrowserRouter> */}
                 <h1 className="page-title">Welcome back student</h1>
                 <br />
                 <div className="component">
@@ -63,14 +63,14 @@ const MainMenu = () => {
                     </tbody>
                     </table>
                 </div>
-                <Routes>
+                {/* <Routes>
                     <Route path="/Profile" element={<Profile />}/>
                     <Route path="/BlogPost" element={<BlogPost />}/>
                     <Route path="/UpdateInformation" element={<UpdateInformation />}/>
                     <Route path="/GetHelp" element={<GetHelp />}/>
                     <Route path="/CloseAccount" element={<CloseAccount />}/>
-                </Routes>
-            </BrowserRouter>
+                </Routes> */}
+            {/* </BrowserRouter> */}
             
         </>
   )
