@@ -16,17 +16,16 @@ const Room = () => {
         const zp = ZegoUIKitPrebuilt.create(kitToken);
 
        
+        zp.addPlugins({ZegoSuperBoardManager});
         zp.joinRoom(
-            {
+        {
             container: element,
             scenario: {
-                mode: ZegoUIKitPrebuilt.VideoConference,
-                mode: ZegoSuperBoardManager.apply
+                mode: ZegoUIKitPrebuilt.VideoConference
             },
             whiteboardConfig: {            
-                showAddImageButton: true, 
-                showCreateAndCloseButton: true,
-             },
+                showAddImageButton: true
+            },
         });
     };
     return (
