@@ -20,42 +20,42 @@ const MainMenu = () => {
             {/* <BrowserRouter> */}
                 <h1 className="page-title">Welcome back student</h1>
                 <br />
-                <div className="component">
+                <div className="component justify-content-center">
                     <table className="main-menu">
                     <tbody>
                         <tr>
-                        <td className="profile">
-                            <p className="student-menu-text">
-                            <Link to="/Profile">Profile</Link>
-                            </p>
-                        </td>
-                        <td className="get-help">
-                            <a className="student-menu-text" href="">
-                            <Link to="/GetHelp">Get Help</Link>
+                        <td className="profile bg-green">
+                            <a className="student-menu-text">
+                            <Link className='text-white' to="/Profile">Profile</Link>
                             </a>
                         </td>
-                        <td className="blog-post">
+                        <td className="get-help bg-orange">
+                            <a className="student-menu-text" href="">
+                            <Link className='text-white' to="/GetHelp">Get Help</Link>
+                            </a>
+                        </td>
+                        <td className="blog-post bg-silver">
                             <a className="student-menu-text">
-                            <Link to="/BlogPost">Blog Post</Link>
+                            <Link  className='text-white' to="/BlogPost">Blog Post</Link>
                             </a>
                         </td>
                         </tr>
                         <tr>
-                        <td className="sign-out">
-                            <a className="student-menu-text" href="">
+                        <td className="sign-out bg-light-pink">
+                            <a className="student-menu-text text-white" href="">
                             Sign Out
                             </a>
                         </td>
-                        <td className="update-information">
+                        <td className="update-information bg-blue-green">
                             <a
                             className="student-menu-text"
-                            ><Link to="/UpdateInformation">
+                            ><Link to="/UpdateInformation" className='text-white'>
                             Update Information
                             </Link>
                             </a>
                         </td>
-                        <td className="close-account">
-                            <a className="student-menu-text" href="">
+                        <td className="close-account bg-red">
+                            <a className="student-menu-text text-white" href="">
                             Close Account
                             </a>
                         </td>

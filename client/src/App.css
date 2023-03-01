@@ -19,10 +19,45 @@
   flex-direction: column;
   } 
 
-  
+  .justify-content-center {
+    display: flex;
+    justify-content: center;
+  }
  .about{
   background-color: #DC143C;
  }
+.main-menu td {
+  text-align: center;
+  padding: 5px;
+}
+table, th, td {
+  border: 1px solid black !important;
+}
+
+.bg-green {
+  background-color: green;
+}
+.bg-orange {
+  background-color: orange;
+}
+.bg-silver {
+  background-color: silver;
+}
+.bg-light-pink {
+  background-color: lightpink;
+}
+.bg-blue-green {
+  background-color: #27e8d7;
+}
+.bg-red {
+  background-color: red;
+}
+.text-white {
+  color: white !important;
+}
+.text-center {
+  text-align: center !important;
+}
 
  .features{
   background-color: #FF4500;

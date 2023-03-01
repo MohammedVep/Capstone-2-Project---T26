@@ -7,10 +7,10 @@ import '../../App.css'
 const ChatApp = () => {
   return (
     <div className="App">
-    <Routes>
+    {/* <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/room/:roomId" element={<RoomPage />} />
-    </Routes>
+    </Routes> */}
   </div>
   )
 }

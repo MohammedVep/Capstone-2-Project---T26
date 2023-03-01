@@ -6,6 +6,7 @@ const { User } = require("../models/registeredUsersModel");
 
 router.post("/auth", async (req, res) => {
   try {
+    console.log("auth", req.body)
     const { error } = validate(req.body);
     if (error) {
       return res.status(401).send(error.details[0].message);

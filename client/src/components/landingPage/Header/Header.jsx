@@ -19,6 +19,11 @@ import Signup from '../Signup/Signup';
 import Payment from '../Signup/Payment';
 import ChatApp from '../../registeredUsers/ChatApp';
 import MainMenu from '../../registeredUsers/MainMenu';
+import GetHelp from '../../registeredUsers/GetHelp';
+import Profile from '../../registeredUsers/Profile';
+
+import HomePage from '../../registeredTutors/ChatComponents/videoChatComponents/Home';
+import RoomPage from '../../registeredTutors/ChatComponents/videoChatComponents/Room'
 
 import HeaderImg from '../../../images/100-header.png'
 import AboutImg from '../../../images/about.png'
@@ -44,6 +49,7 @@ const Header = () => {
             </div>
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/Profile" element={<Profile />} />
                 <Route path="/About" element={<About />} />
                 <Route path="/Features" element={<Features />}/>
                 <Route path="/Pricing" element={<Pricing />}/>
@@ -53,8 +59,11 @@ const Header = () => {
                 <Route path="/Signup" element={<Signup />}/>
                 <Route path="/Login" element={<Login />}/>
                 <Route path="/Payment" element={<Payment />}/>
-                <Route path="/ChatApp" element={<ChatApp />}/>
+                {/* <Route path="/ChatApp" element={<ChatApp />}/> */}
+                <Route path="/ChatApp" element={<HomePage />} />
+                <Route path="/room/:roomId" element={<RoomPage />} />
                 <Route path="/MainMenu" element={<MainMenu />}/>
+                <Route path="/GetHelp" element={<GetHelp />}/>
             </Routes>
         </BrowserRouter>
     

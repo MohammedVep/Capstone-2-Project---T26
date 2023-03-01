@@ -6,6 +6,8 @@ const connectDB = require("./db");
 const tutorRoutes = require("./routes/tutorRoutes");
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/userRoutes")
+const profileRoutes = require("./routes/profileRoutes")
+
 const http = require("http").Server(app);
 const puppeteer = require("puppeteer");
 const PuppeteerMassScreenshots = require("./screen.shooter");
@@ -81,6 +83,7 @@ app.use(cors());
 app.use("/api", tutorRoutes);
 app.use("/api", authRoutes);
 app.use("/api/user", userRoutes)
+app.use("/api/profile", profileRoutes)
 
 const PORT = process.env.PORT || 4000;
 

@@ -11,23 +11,18 @@ import ChatApp from '../registeredUsers/ChatApp'
 const GetHelp = () => {
   return (
     <>
-        <BrowserRouter>
-        <h1 className="page-title">Help Student</h1>
+        <h1 className="page-title">Get Help</h1>
         <br />
         <div className="component">
           <table className="table">
             <tbody className="tutor-list">
                 <tr>
-                    <td><Link to="/ChatApp">Tutor Info</Link></td>
+                  <td className='text-center'><Link to="/ChatApp">Tutor Info</Link></td>
                 </tr>
             </tbody>
           </table>
         </div>
-        {/* <Routes>
-            <Route path="/ChatApp" element={<ChatApp />}/>
-        </Routes> */}
-        </BrowserRouter>
-        </>
+    </>
   )
 }
 

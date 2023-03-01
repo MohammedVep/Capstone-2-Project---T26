@@ -30,6 +30,7 @@ const Room = () => {
     };
     return (
         <div className='room-page'>
+            <div>this is room page</div>
             <div id="parentDomID">
                 <div ref={myMeeting} />
             </div>
