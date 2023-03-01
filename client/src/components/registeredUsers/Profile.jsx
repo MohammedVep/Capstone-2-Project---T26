@@ -50,15 +50,12 @@ const Profile = () => {
     };
     
       //"https://capstonefeb15.onrender.com/api/signup/tutor
-    
       const handleSubmit = async (e) => {
         e.preventDefault();
         try {
           const url = "http://localhost:4000/api/profile/create";
-          console.log('profileInfo', profileInfo)
-          
           const { data: res } = await axios.post(url, profileInfo);
-          console.log('res', res)
+          navigate("/MainMenu");
         } catch (error) {
           if (
             error.response &&
@@ -76,9 +73,7 @@ const Profile = () => {
         <h1 className="page-title">Profile</h1>
             <br />
             <div className="component">
-                <form onSubmit={handleSubmit}>
-
-              
+                <form onSubmit={handleSubmit} className="text-center">
                 <div className="profile-pic">
                 <label className="-label" htmlFor="file">
                     <span className="glyphicon glyphicon-camera" />

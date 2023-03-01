@@ -7,6 +7,7 @@ const tutorRoutes = require("./routes/tutorRoutes");
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/userRoutes")
 const profileRoutes = require("./routes/profileRoutes")
+const blogPostRoutes = require("./routes/blogPostRoutes.js")
 
 const http = require("http").Server(app);
 const puppeteer = require("puppeteer");
@@ -84,9 +85,10 @@ app.use("/api", tutorRoutes);
 app.use("/api", authRoutes);
 app.use("/api/user", userRoutes)
 app.use("/api/profile", profileRoutes)
+app.use("/api/blogpost", blogPostRoutes);;
 
 const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
-    });
+});

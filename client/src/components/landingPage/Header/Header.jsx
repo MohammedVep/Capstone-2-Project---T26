@@ -24,6 +24,8 @@ import Profile from '../../registeredUsers/Profile';
 
 import HomePage from '../../registeredTutors/ChatComponents/videoChatComponents/Home';
 import RoomPage from '../../registeredTutors/ChatComponents/videoChatComponents/Room'
+import BlogPost from '../../registeredUsers/BlogPost'
+import UpdateInformation from "../../registeredUsers/UpdateInformation"
 
 import HeaderImg from '../../../images/100-header.png'
 import AboutImg from '../../../images/about.png'
@@ -59,11 +61,12 @@ const Header = () => {
                 <Route path="/Signup" element={<Signup />}/>
                 <Route path="/Login" element={<Login />}/>
                 <Route path="/Payment" element={<Payment />}/>
-                {/* <Route path="/ChatApp" element={<ChatApp />}/> */}
                 <Route path="/ChatApp" element={<HomePage />} />
                 <Route path="/room/:roomId" element={<RoomPage />} />
                 <Route path="/MainMenu" element={<MainMenu />}/>
                 <Route path="/GetHelp" element={<GetHelp />}/>
+                <Route path="/BlogPost" element={<BlogPost />}/>
+                <Route path='/UpdateInformation' element={<UpdateInformation /> } />
             </Routes>
         </BrowserRouter>
     

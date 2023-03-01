@@ -1,16 +1,23 @@
 import React from 'react'
-
+import { useNavigate } from 'react-router-dom';
 const UpdateInformation = () => {
     const[value, setValue] = React.useState('province');
+    const navigate = useNavigate();
     const handleChange = (event) => {
         setValue(event.target.value);
+        
     }
+    const handleFormSubmit = (ev) => {
+        ev.preventDefault();
+        console.log("update")
+        
+    };
   return (
     <>
         <h1 className="page-title">Update Information</h1>
             <br />
-            <div className="component">
-                <form>
+            <div className="component text-center" >
+                <form onSubmit={handleFormSubmit}>
                     <label htmlFor="fname" className="form-name">First Name: </label>
                     <input type="text" id="fname" name="fname" />
                     <br />

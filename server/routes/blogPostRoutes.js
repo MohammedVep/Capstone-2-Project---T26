@@ -1,15 +1,16 @@
 const router = require("express").Router();
-const { blogPost, validateBlogPost, blogPost } = require("../models/blogPostModel.js");
+const { blogPost, validateBlogPost,  } = require("../models/blogPostModel.js");
 
 //Add blog post
 
-router.post("/addBlogPost", async (req, res) => {
+router.post("/create", async (req, res) => {
     try {
         const { error } = validateBlogPost(req.body);
         if (error) {
             console.log(error)
             return res.status(401).send(error.details[0].message);
         }
+        console.log("req body", req.body)
         const BlogPost = await blogPost.findOne({ title: req.body.title, post: req.body.post });
         if(BlogPost){
             return res.status(401).send("Blog already there");
@@ -23,7 +24,7 @@ router.post("/addBlogPost", async (req, res) => {
     }
 });
 
-router.get("/blogPost/list", async (req, res) => {
+router.get("/list", async (req, res) => {
     try{
         const data = await blogPost.find();
         res.status(201).json(data);

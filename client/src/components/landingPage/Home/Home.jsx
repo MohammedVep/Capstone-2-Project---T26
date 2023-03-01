@@ -48,7 +48,8 @@ const Home = () => {
               </div>
           </Col>
           <Col lg={3} md={6} xs={12}>
-          <div className="header-tutoring"><a  href="/BecomeTutor">Tutor
+          <div className="header-tutoring"><a  hre
+          f="/BecomeTutor">Tutor
             </a>
                <ul>
                 Our app is going to have various features such as:

@@ -16,8 +16,8 @@ const blogPost = mongoose.model('blogPost', blogPostSchema);
 
 const validateBlogPost = (blogPost) => {
     const schema = Joi.object({
-        title: Joi.string().required().label("Title"),
-        post: Joi.string().required().label("Post")
+        title: Joi.string().required().label("title"),
+        post: Joi.string().required().label("post")
     });
     return schema.validate(blogPost);
 }
