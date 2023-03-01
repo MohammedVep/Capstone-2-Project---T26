@@ -28,6 +28,26 @@ const registeredTutorSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
+    address: {
+        type: String,
+        required: false,
+    },
+    city: {
+        type: String,
+        required: false,
+    },
+    province: {
+        type: String,
+        required: false,
+    },
+    postalCode: {
+        type: String,
+        required: false,
+    },
+    country: {
+        type: String,
+        required: false,
+    },
     isTutor: {
         type: Boolean,
         default: true
