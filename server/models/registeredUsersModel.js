@@ -31,7 +31,47 @@ const registeredUsersSchema = new mongoose.Schema({
     isStudent: {
         type: Boolean,
         default: true
-    }
+    },
+    address: {
+        type: String,
+        required: false,
+    },
+    city: {
+        type: String,
+        required: false,
+    },
+    province: {
+        type: String,
+        required: false,
+    },
+    postalCode: {
+        type: String,
+        required: false,
+    },
+    country: {
+        type: String,
+        required: false,
+    },
+    cardName: {
+        type: String,
+        required: false,
+    },
+    cardNumber: {
+        type: String,
+        required: false,
+    },
+    cardExpMonth: {
+        type: String,
+        required: false,
+    },
+    cardExpYear: {
+        type: String,
+        required: false,
+    },
+    cardExpCVV: {
+        type: String,
+        required: false,
+    },
 });
 
 registeredUsersSchema.methods.generateAuthToken = function () {

@@ -39,6 +39,18 @@ router.get("/user/result", async (req, res) => {
     res.status(500).json({ data });
   }
 });
+router.post("/update", async (req, res) => {
+  try {
+    const filter= {email: req.body.email}
+    const update = {
+      ...req.body,
+    }
+    const data = await User.findOneAndUpdate(filter, update);
+    res.status(201).json(data);
+  } catch (error) {
+    res.status(500).json({ data });
+  }
+})
 
 router.delete('/user/:id', async (req, res) => {
    try {
