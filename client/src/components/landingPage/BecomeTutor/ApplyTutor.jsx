@@ -12,11 +12,6 @@ const ApplyTutor = () => {
         email: "",
         phone: "",
         password: "",
-        address: "",
-        city: "",
-        province: "",
-        postalCode: "",
-        country: ""
       });
     
       const [error, setErrors] = useState("");
@@ -32,6 +27,8 @@ const ApplyTutor = () => {
         try {
           const url = "http://localhost:4000/api/signup/tutor";
           const { data: res } = await axios.post(url, data);
+          localStorage.setItem("tutor", JSON.stringify(res.data));
+
           navigate("/PayInfo");
           console.log(res.message);
         } catch (error) {
@@ -123,7 +120,7 @@ const ApplyTutor = () => {
                 {error && <div className={styles.erro_msg}>{error}</div>}
     
                 <button type="submit" className={styles.green_btn}>
-                  Apply Now
+                  Apply Now123
                 </button>
               </form>
             </div>

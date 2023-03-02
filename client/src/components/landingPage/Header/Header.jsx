@@ -80,13 +80,13 @@ const Header = () => {
                 <Route path='/user/UpdateInformation' element={<UserUpdateInformation /> } />
                 <Route path='/user/SignOut' element={<UserSignOut />}/>
                 <Route path='/user/CloseAccount' element={<UserCloseAccount />} />
-                <Route path='tutor/MainMenu' element={<TutorMainMenu />} />
-                <Route path='tutor/HelpStudent' element={<TutorHelpStudent />} />
-                <Route path='tutor/BlogPost' element={<TutorBlogPost />} />
-                <Route path='tutor/Profile' element={<TutorProfile />} />
-                <Route path='tutor/UpdateInformation' element={<TutorUpdateInformation />} />
-                <Route path='tutor/SignOut' element={<TutorSignOut />} />
-                <Route path='tutor/CloseAccount' element={<TutorCloseAccount />} />
+                <Route path='/tutor/MainMenu' element={<TutorMainMenu />} />
+                <Route path='/tutor/HelpStudent' element={<TutorHelpStudent />} />
+                <Route path='/tutor/BlogPost' element={<TutorBlogPost />} />
+                <Route path='/tutor/Profile' element={<TutorProfile />} />
+                <Route path='/tutor/UpdateInformation' element={<TutorUpdateInformation />} />
+                <Route path='/tutor/SignOut' element={<TutorSignOut />} />
+                <Route path='/tutor/CloseAccount' element={<TutorCloseAccount />} />
             </Routes>
         </BrowserRouter>
     

@@ -26,37 +26,37 @@ const MainMenu = () => {
                         <tr>
                         <td className="profile bg-green">
                             <a className="student-menu-text">
-                            <Link className='text-white' to="/Profile">Profile</Link>
+                            <Link className='text-white' to="/tutor/Profile">Profile</Link>
                             </a>
                         </td>
                         <td className="get-help bg-orange">
                             <a className="student-menu-text" href="">
-                            <Link className='text-white' to="/HelpStudent">Help Student</Link>
+                            <Link className='text-white' to="/tutor/HelpStudent">Help Student</Link>
                             </a>
                         </td>
                         <td className="blog-post bg-silver">
                             <a className="student-menu-text">
-                            <Link  className='text-white' to="/BlogPost">Blog Post</Link>
+                            <Link  className='text-white' to="/tutor/BlogPost">Blog Post</Link>
                             </a>
                         </td>
                         </tr>
                         <tr>
                         <td className="sign-out bg-light-pink">
-                            <a className="student-menu-text text-white" href="">
-                            Sign Out
+                            <a className="student-menu-text" href="">
+                            <Link className='text-white' to="/tutor/SignOut">Sign Out</Link>
                             </a>
                         </td>
                         <td className="update-information bg-blue-green">
                             <a
                             className="student-menu-text"
-                            ><Link to="/UpdateInformation" className='text-white'>
+                            ><Link to="/tutor/UpdateInformation" className='text-white'>
                             Update Information
                             </Link>
                             </a>
                         </td>
                         <td className="close-account bg-red">
-                            <a className="student-menu-text text-white" href="">
-                            Close Account
+                            <a className="student-menu-text" href="">
+                            <Link className='text-white' to="/tutor/CloseAccount">Close Account</Link>
                             </a>
                         </td>
                         </tr>

@@ -54,15 +54,15 @@ const registeredTutorSchema = new mongoose.Schema({
     },
     transitN: {
         type: String,
-        required: true
+        required: false
     },
     accN: {
         type: String,
-        required: true
+        required: false
     },
     branchN: {
         type: String,
-        required: true
+        required: false
     }
 });
 

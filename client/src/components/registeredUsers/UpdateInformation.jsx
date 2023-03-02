@@ -16,7 +16,8 @@ const UpdateInformation = () => {
         try {
             const url = "http://localhost:4000/api/user/update";
             const { data: res } = await axios.post(url, user);
-            // navigate("/MainMenu");
+            
+            
           } catch (error) {
             if (
               error.response &&
@@ -37,8 +38,8 @@ const UpdateInformation = () => {
                     <label htmlFor="firstname" className="form-name">First Name: </label>
                     <input type="text" id="firstname" name="firstname" onChange={handleChange}/>
                     <br />
-                    <label htmlFor="lname" className="form-name">Last Name: </label>
-                    <input type="text" id="lname" name="lname" onChange={handleChange}/>
+                    <label htmlFor="lastname" className="form-name">Last Name: </label>
+                    <input type="text" id="lastname" name="lastname" onChange={handleChange}/>
                     <br />
                     <label htmlFor="address" className="form-name">Address: </label>
                     <input type="text" id="address" name="address" onChange={handleChange}/>
@@ -49,8 +50,8 @@ const UpdateInformation = () => {
                     <label htmlFor="province" className="form-name">Province: </label>
                     <input type="text" id="province" name="province" onChange={handleChange}/>
                     <br />
-                    <label htmlFor="pcode" className="form-name">Postal Code: </label>
-                    <input type="text" id="pcode" name="pcode" onChange={handleChange}/>
+                    <label htmlFor="postalCode" className="form-name">Postal Code: </label>
+                    <input type="text" id="postalCode" name="postalCode" onChange={handleChange}/>
                     <br />
                     <label htmlFor="country" className="form-name">Country: </label>
                     <input type="text" id="country" name="country" onChange={handleChange}/>
@@ -64,20 +65,20 @@ const UpdateInformation = () => {
                     <label htmlFor="cpassword" className="form-name">Confirm Password: </label>
                     <input type="password" id="cpassword" name="cpassword" onChange={handleChange}/>
                     <br />
-                    <label htmlFor="cname" className="form-name">Credit Card Name: </label>
-                    <input type="text" id="cname" name="cname" onChange={handleChange}/>
+                    <label htmlFor="cardName" className="form-name">Credit Card Name: </label>
+                    <input type="text" id="cardName" name="cardName" onChange={handleChange}/>
                     <br />
-                    <label htmlFor="ccnum" className="form-name">Credit Card Number: </label>
-                    <input type="text" id="ccnum" name="ccnum" onChange={handleChange}/>
+                    <label htmlFor="cardNumber" className="form-name">Credit Card Number: </label>
+                    <input type="text" id="cardNumber" name="cardNumber" onChange={handleChange}/>
                     <br />
-                    <label htmlFor="expmonth" className="form-name">Exp Month: </label>
-                    <input type="text" id="expmonth" name="expmonth" onChange={handleChange}/>
+                    <label htmlFor="cardExpMonth" className="form-name">Exp Month: </label>
+                    <input type="text" id="cardExpMonth" name="cardExpMonth" onChange={handleChange}/>
                     <br />
-                    <label htmlFor="expyear" className="form-name">Exp Year: </label>
-                    <input type="text" id="expyear" name="expyear" onChange={handleChange}/>
+                    <label htmlFor="cardExpYear" className="form-name">Exp Year: </label>
+                    <input type="text" id="cardExpYear" name="cardExpYear" onChange={handleChange}/>
                     <br />
-                    <label htmlFor="cvv" className="form-name">CVV: </label>
-                    <input type="text" id="cvv" name="cvv" />
+                    <label htmlFor="cardExpCVV" className="form-name">CVV: </label>
+                    <input type="text" id="cardExpCVV" name="cardExpCVV" />
                     <input className="btn btn-primary" type="submit" defaultValue="Update info" />
                 </form>
                 <br />

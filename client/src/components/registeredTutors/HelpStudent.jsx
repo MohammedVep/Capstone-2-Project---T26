@@ -11,7 +11,7 @@ import ChatApp from '../registeredUsers/ChatApp'
 const HelpStudent = () => {
   return (
     <>
-        <h1 className="page-title">Get Help</h1>
+        <h1 className="page-title">Help Student</h1>
         <br />
         <div className="component">
           <table className="table">

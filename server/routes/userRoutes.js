@@ -30,7 +30,6 @@ router.post("/signup/user", async (req, res) => {
   }
 });
 
-
 // GET ALL REGISTERED UserS
 router.get("/user/result", async (req, res) => {
   try {
@@ -40,14 +39,23 @@ router.get("/user/result", async (req, res) => {
     res.status(500).json({ data });
   }
 });
-router.post("user/update", async (req, res) => {
+
+
+router.post("/update", async (req, res) => {
   try {
     const filter= {email: req.body.email}
+    console.log('filter', filter)
     const update = {
       ...req.body,
     }
-    const data = await User.findOneAndUpdate(filter, update);
-    res.status(201).json(data);
+    const doc = await User.findOneAndUpdate(filter, update);
+    console.log('data', doc)
+
+    const salt = await bcrypt.genSalt(Number(process.env.SALT));
+    const hashedPassword = await bcrypt.hash(req.body.password, salt);
+    await doc.update({password: hashedPassword});
+
+    res.status(201).json(doc);
   } catch (error) {
     res.status(500).json({ data });
   }

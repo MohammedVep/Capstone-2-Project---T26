@@ -12,6 +12,7 @@ router.post("/signup/tutor", async (req, res) => {
       return res.status(401).send(error.details[0].message);
     }
     const tutor = await Tutor.findOne({ email: req.body.email });
+    console.log('tutor1', tutor)
     if (tutor) {
       return res.status(401).send("Tutor already registered.");
     }
@@ -19,10 +20,19 @@ router.post("/signup/tutor", async (req, res) => {
     const salt = await bcrypt.genSalt(Number(process.env.SALT));
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
-    await new Tutor({ ...req.body, password: hashedPassword }).save();
-    res.status(201).send({ message: "Tutor registered successfully." });
+    const doc = await new Tutor({ ...req.body, password: hashedPassword }).save();
+    res.status(201).send({ message: "Tutor registered successfully.", data: doc });
   } 
   catch (err) {
+    res.status(500).send(err.message);
+  }
+});
+
+router.post("/tutor/update", async (req, res) => {
+  try {
+    const tutor = await Tutor.findOneAndUpdate({ _id: req.body.id}, req.body);
+    res.status(201).send({ message: "Tutor updated successfully."});
+  } catch (error) {
     res.status(500).send(err.message);
   }
 });
