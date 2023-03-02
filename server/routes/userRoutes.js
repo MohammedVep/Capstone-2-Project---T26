@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt");
 
 // REGISTER User
 router.post("/signup/user", async (req, res) => {
+
   try {
     console.log('signup user ===', req.body)
     const { error } = validateUser(req.body);
@@ -39,7 +40,7 @@ router.get("/user/result", async (req, res) => {
     res.status(500).json({ data });
   }
 });
-router.post("/update", async (req, res) => {
+router.post("user/update", async (req, res) => {
   try {
     const filter= {email: req.body.email}
     const update = {
