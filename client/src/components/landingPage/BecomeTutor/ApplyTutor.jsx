@@ -120,7 +120,7 @@ const ApplyTutor = () => {
                 {error && <div className={styles.erro_msg}>{error}</div>}
     
                 <button type="submit" className={styles.green_btn}>
-                  Apply Now123
+                  Apply Now
                 </button>
               </form>
             </div>

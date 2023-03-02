@@ -12,11 +12,6 @@ const Signup = () => {
     email: "",
     phone: "",
     password: "",
-    address: "",
-    city: "",
-    province: "",
-    postalCode: "",
-    country: ""
   });
 
   const [error, setErrors] = useState("");
@@ -32,8 +27,9 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:4000/api/signup/tutor";
+      const url = "http://localhost:4000/api/signup/user";
       const { data: res } = await axios.post(url, data);
+      localStorage.setItem("user", JSON.stringify(res.data));
       navigate("/Payment");
       console.log(res.message);
     } catch (error) {
