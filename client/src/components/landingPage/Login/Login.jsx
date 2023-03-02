@@ -5,10 +5,12 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [data, setData] = useState({
     email: "",
     password: "",
   });
+
 
   const [error, setErrors] = useState("");
   const user = JSON.parse(localStorage.getItem("user"));
@@ -25,7 +27,9 @@ const Login = () => {
       const { data: res } = await axios.post(url, data);
       console.log("res", res)
       localStorage.setItem("token", res.data);
-      window.location = "/MainMenu";
+      // window.location = "/MainMenu";
+      const navUrl = res?.isStudent ? '/user/MainMenu' : '/tutor/MainMenu'
+      navigate(navUrl);
       console.log(res.data);
     } catch (error) {
       if (
