@@ -27,7 +27,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:4000/api/signup/user";
+      const url = "http://localhost:4000/api/user/signup";
       const { data: res } = await axios.post(url, data);
       localStorage.setItem("user", JSON.stringify(res.data));
       navigate("/Payment");
@@ -120,7 +120,6 @@ const Signup = () => {
 
             {error && <div className={styles.erro_msg}>{error}</div>}
               <button type="submit" className={styles.green_btn}>
-                {/* <Link to='/Payment'>Apply Now</Link> */}
                 Sign Up
               </button>
             

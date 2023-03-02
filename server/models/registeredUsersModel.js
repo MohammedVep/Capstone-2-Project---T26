@@ -56,7 +56,7 @@ const registeredUsersSchema = new mongoose.Schema({
         type: String,
         required: false,
     },
-    cardName: {
+    cardHolderName: {
         type: String,
         required: false,
     },

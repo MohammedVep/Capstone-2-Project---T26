@@ -4,8 +4,7 @@ const bcrypt = require("bcrypt");
 
 
 // REGISTER User
-router.post("/signup/user", async (req, res) => {
-
+router.post("/signup", async (req, res) => {
   try {
     console.log('signup user ===', req.body)
     const { error } = validateUser(req.body);
@@ -30,6 +29,8 @@ router.post("/signup/user", async (req, res) => {
   }
 });
 
+
+
 // GET ALL REGISTERED UserS
 router.get("/user/result", async (req, res) => {
   try {
@@ -40,6 +41,18 @@ router.get("/user/result", async (req, res) => {
   }
 });
 
+// update User
+router.post("/update-payment", async (req, res) => {
+  try {
+    const update= req.body
+    console.log('update', update)
+    const user = await User.findOneAndUpdate({_id: req.body.id}, update);
+    console.log('update3', user)
+    res.status(201).send({ message: "User updated successfully.", data: user });
+  } catch (error) {
+    res.status(500).send(err.message);
+  }
+})
 
 router.post("/update", async (req, res) => {
   try {
@@ -79,4 +92,34 @@ router.delete('/user/:id', async (req, res) => {
    }
 });
 
+
+router.get('/signout',  (req, res) => {
+  try {
+    res.status(201).send({ message: "User logged out successfully." });  
+  } catch (error) {
+    res.status(500).send(error.message); 
+  }
+})
+
+router.delete('/delete', async (req, res) => {
+  const data =  req.data;
+  console.log('data1', req.body);
+  try {
+    const data = await User.findOneAndDelete({email: req.body.email}, function (err, user) {
+        if (err) {
+            console.log(err);
+            res.status(500).send(err.message);
+        }
+        if (!user){
+          res.status(201).send("User Not Found");
+        }
+        else {
+            console.log("User deleted successfully");
+            res.status(201).send("User deleted");
+        }
+    })
+   } catch (error) {
+        res.status(500).send(error.message);
+   }
+})
 module.exports = router;

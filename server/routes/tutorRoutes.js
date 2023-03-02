@@ -66,4 +66,35 @@ router.delete('/tutor/:id', async (req, res) => {
     }
  });
 
+ router.get('/tutor/signout',  (req, res) => {
+  try {
+    res.status(201).send({ message: "tutor logged out successfully." });  
+  } catch (error) {
+    res.status(500).send(error.message); 
+  }
+})
+
+
+router.delete('/delete', async (req, res) => {
+  const data =  req.data;
+  console.log('data1', req.body);
+  try {
+    const data = await Tutor.findOneAndDelete({email: req.body.email}, function (err, user) {
+        if (err) {
+            console.log(err);
+            res.status(201).send(err.message);
+        }
+        if (!user){
+          res.status(201).send("Tutor Not Found");
+        }
+        else {
+            console.log("Tutor deleted successfully");
+            res.status(201).send("Tutor deleted");
+        }
+    })
+   } catch (error) {
+        res.status(500).send(error.message);
+   }
+})
+
 module.exports = router;

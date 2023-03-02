@@ -1,4 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react'
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import BlogPost from './BlogPost';
 import Profile from './Profile';
 import UpdateInformation from './UpdateInformation';
@@ -15,6 +17,49 @@ import {
 } from "react-router-dom";
 
 const MainMenu = () => {
+    const navigate = useNavigate();
+    const [error, setErrors] = useState("");
+    const userSignout = async () => {
+        try {
+          const url = "http://localhost:4000/api/user/signout";
+          const { data: res } = await axios.get(url);
+          localStorage.clear();
+          navigate("/");
+
+        } catch (error) {
+          if (
+            error.response &&
+            error.response.status >= 400 &&
+            error.response.status < 500
+          ) {
+            setErrors(error.response.data);
+            console.log(error.response);
+          }
+        }
+    }
+
+    const onCloseAccount = async () => {
+        try {
+            const url = "http://localhost:4000/api/user/delete";
+            console.log("onCloseAccount")
+            const user = JSON.parse(localStorage.getItem('user'))
+
+            console.log("user", user)
+            const { data: res } = await axios.delete(url, {data: {email : user.email}});
+            localStorage.clear();
+            navigate("/");
+          } catch (error) {
+            console.log("error1", error)
+            if (
+              error.response &&
+              error.response.status >= 400 &&
+              error.response.status < 500
+            ) {
+              setErrors(error.response.data);
+              console.log(error.response);
+            }
+          }
+    }
   return (
         <>
             {/* <BrowserRouter> */}
@@ -43,7 +88,8 @@ const MainMenu = () => {
                         <tr>
                         <td className="sign-out bg-light-pink">
                             <a className="student-menu-text" href="">
-                            <Link className='text-white' to="/user/SignOut">Sign Out</Link>
+                            {/* <Link className='text-white' to="/user/SignOut">Sign Out</Link> */}
+                            <Link className='text-white' onClick={userSignout}>Sign Out</Link>
                             </a>
                         </td>
                         <td className="update-information bg-blue-green">
@@ -56,7 +102,7 @@ const MainMenu = () => {
                         </td>
                         <td className="close-account bg-red">
                             <a className="student-menu-text" href="">
-                            <Link className='text-white' to="/user/CloseAccount">Close Account</Link>
+                            <Link className='text-white' onClick={onCloseAccount}>Close Account</Link>
                             </a>
                         </td>
                         </tr>

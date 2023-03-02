@@ -7,9 +7,10 @@ import { useNavigate } from "react-router-dom";
 
 const Payment = () => {
     const [data, setData] = useState({
-        creditCardNum: "",
-        expyDate: "",
-        securityCode: "",
+        cardNumber: "",
+        cardExpMonth: "",
+        cardExpYear: "",
+        cardExpCVV: "",
         cardHolderName: "",
       });
     
@@ -22,11 +23,18 @@ const Payment = () => {
       };
     
       const handleSubmit = async (e) => {
+        console.log("Submitting payment")
         e.preventDefault();
         try {
-          const url = "http://localhost:4000/api/user/signup/user";
-          const { data: res } = await axios.post(url, data);
-          navigate("/login");
+          const url = "http://localhost:4000/api/user/update-payment";
+          const user = JSON.parse(localStorage.getItem("user"));
+          console.log('user', user)
+          const payload = {
+            ...data,
+            id: user._id
+          }
+          const { data: res } = await axios.post(url, payload);
+          navigate("/user/MainMenu");
           console.log(res.message);
         } catch (error) {
           if (
@@ -67,8 +75,8 @@ const Payment = () => {
                 <input
                   type="text"
                   placeholder="Credit Card Number"
-                  name="creditCardNum"
-                  value={data.creditCardNum}
+                  name="cardNumber"
+                  value={data.cardNumber}
                   required
                   className={styles.input}
                   onChange={handleChange}
@@ -76,9 +84,19 @@ const Payment = () => {
     
                 <input
                   type="text"
-                  placeholder="Exiry Date"
-                  name="expyDate"
-                  value={data.expyDate}
+                  placeholder="Exiry Month"
+                  name="cardExpMonth"
+                  value={data.cardExpMonth}
+                  required
+                  className={styles.input}
+                  onChange={handleChange}
+                />
+
+                <input
+                  type="text"
+                  placeholder="Exiry Year"
+                  name="cardExpYear"
+                  value={data.cardExpYear}
                   required
                   className={styles.input}
                   onChange={handleChange}
@@ -87,8 +105,8 @@ const Payment = () => {
                 <input
                   type="number"
                   placeholder="Security Code"
-                  name="securityCode"
-                  value={data.securityCode}
+                  name="cardExpCVV"
+                  value={data.cardExpCVV}
                   required
                   className={styles.input}
                   onChange={handleChange}
