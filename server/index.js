@@ -31,7 +31,7 @@ app.use(express.json());
 app.use(cors());
 
 // Routes
-app.use("/api", tutorRoutes);
+app.use("/api/tutor", tutorRoutes);
 app.use("/api", authRoutes);
 app.use("/api/user", userRoutes)
 app.use("/api/profile", profileRoutes)
