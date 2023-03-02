@@ -18,7 +18,7 @@ const socketIO = require('socket.io')(http, {
     }
 });
 
-let channelList = [];
+
 
 
 
