@@ -27,7 +27,7 @@ const ApplyTutor = () => {
         try {
           const url = "http://localhost:4000/api/signup/tutor";
           const { data: res } = await axios.post(url, data);
-          navigate("/login");
+          navigate("/PayInfo");
           console.log(res.message);
         } catch (error) {
           if (

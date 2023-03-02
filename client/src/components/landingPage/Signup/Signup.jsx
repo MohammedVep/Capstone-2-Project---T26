@@ -29,7 +29,7 @@ const Signup = () => {
     try {
       const url = "http://localhost:4000/api/signup/tutor";
       const { data: res } = await axios.post(url, data);
-      navigate("/login");
+      navigate("/Payment");
       console.log(res.message);
     } catch (error) {
       if (

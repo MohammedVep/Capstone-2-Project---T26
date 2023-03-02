@@ -17,15 +17,25 @@ import Home from '../Home/Home';
 import Login from '../Login/Login';
 import Signup from '../Signup/Signup';
 import Payment from '../Signup/Payment';
+import PayInfo from '../BecomeTutor/PayInfo'
 import ChatApp from '../../registeredUsers/ChatApp';
-import MainMenu from '../../registeredUsers/MainMenu';
-import GetHelp from '../../registeredUsers/GetHelp';
-import Profile from '../../registeredUsers/Profile';
+import UserMainMenu from '../../registeredUsers/MainMenu';
+import UserGetHelp from '../../registeredUsers/GetHelp';
+import UserProfile from '../../registeredUsers/Profile';
+import TutorBlogPost from '../../registeredTutors/BlogPost'
+import TutorProfile from '../../registeredTutors/Profile'
+import TutorHelpStudent from '../../registeredTutors/HelpStudent';
+import TutorUpdateInformation from '../../registeredTutors/UpdateInformation'
+import TutorMainMenu from '../../registeredTutors/MainMenu'
+import UserSignOut from '../../registeredUsers/SignOut'
+import UserCloseAccount from '../../registeredUsers/CloseAccount'
+import TutorSignOut from '../../registeredTutors/SignOut'
+import TutorCloseAccount from '../../registeredTutors/CloseAccount'
 
 import HomePage from '../../registeredTutors/ChatComponents/videoChatComponents/Home';
 import RoomPage from '../../registeredTutors/ChatComponents/videoChatComponents/Room'
-import BlogPost from '../../registeredUsers/BlogPost'
-import UpdateInformation from "../../registeredUsers/UpdateInformation"
+import UserBlogPost from '../../registeredUsers/BlogPost'
+import UserUpdateInformation from "../../registeredUsers/UpdateInformation"
 
 import HeaderImg from '../../../images/100-header.png'
 import AboutImg from '../../../images/about.png'
@@ -51,22 +61,32 @@ const Header = () => {
             </div>
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/Profile" element={<Profile />} />
+                <Route path="/user/Profile" element={<UserProfile />} />
                 <Route path="/About" element={<About />} />
                 <Route path="/Features" element={<Features />}/>
                 <Route path="/Pricing" element={<Pricing />}/>
                 <Route path="/BecomeTutor" element={<BecomeTutor />}/>
                 <Route path="/ApplyTutor" element={<ApplyTutor />}/>
+                <Route path="/PayInfo" element={<PayInfo />} />
                 <Route path="/Benefits" element={<Benefits />}/>
                 <Route path="/Signup" element={<Signup />}/>
                 <Route path="/Login" element={<Login />}/>
                 <Route path="/Payment" element={<Payment />}/>
                 <Route path="/ChatApp" element={<HomePage />} />
                 <Route path="/room/:roomId" element={<RoomPage />} />
-                <Route path="/MainMenu" element={<MainMenu />}/>
-                <Route path="/GetHelp" element={<GetHelp />}/>
-                <Route path="/BlogPost" element={<BlogPost />}/>
-                <Route path='/UpdateInformation' element={<UpdateInformation /> } />
+                <Route path="/user/MainMenu" element={<UserMainMenu />}/>
+                <Route path="/user/GetHelp" element={<UserGetHelp />}/>
+                <Route path="/user/BlogPost" element={<UserBlogPost />}/>
+                <Route path='/user/UpdateInformation' element={<UserUpdateInformation /> } />
+                <Route path='/user/SignOut' element={<UserSignOut />}/>
+                <Route path='/user/CloseAccount' element={<UserCloseAccount />} />
+                <Route path='tutor/MainMenu' element={<TutorMainMenu />} />
+                <Route path='tutor/HelpStudent' element={<TutorHelpStudent />} />
+                <Route path='tutor/BlogPost' element={<TutorBlogPost />} />
+                <Route path='tutor/Profile' element={<TutorProfile />} />
+                <Route path='tutor/UpdateInformation' element={<TutorUpdateInformation />} />
+                <Route path='tutor/SignOut' element={<TutorSignOut />} />
+                <Route path='tutor/CloseAccount' element={<TutorCloseAccount />} />
             </Routes>
         </BrowserRouter>
     
