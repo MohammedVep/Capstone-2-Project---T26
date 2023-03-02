@@ -12,6 +12,11 @@ const ApplyTutor = () => {
         email: "",
         phone: "",
         password: "",
+        address: "",
+        city: "",
+        province: "",
+        postalCode: "",
+        country: ""
       });
     
       const [error, setErrors] = useState("");
