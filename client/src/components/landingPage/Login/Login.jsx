@@ -28,7 +28,7 @@ const Login = () => {
       console.log("res", res)
       localStorage.setItem("token", res.data);
       // window.location = "/MainMenu";
-      const navUrl = res?.isStudent ? '/user/MainMenu' : '/tutor/MainMenu'
+      const navUrl = res ?.isStudent ? '/user/MainMenu' : '/tutor/MainMenu'
       navigate(navUrl);
       console.log(res.data);
     } catch (error) {
