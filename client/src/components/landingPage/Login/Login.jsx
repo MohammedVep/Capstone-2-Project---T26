@@ -25,8 +25,9 @@ const Login = () => {
     try {
       const url = "http://localhost:4000/api/auth";
       const { data: res } = await axios.post(url, data);
-      console.log("res", res)
+      console.log("res ===", res)
       localStorage.setItem("token", res.data);
+      localStorage.setItem("user", JSON.stringify(res));
       // window.location = "/MainMenu";
       const navUrl = res ?.isStudent ? '/user/MainMenu' : '/tutor/MainMenu'
       navigate(navUrl);

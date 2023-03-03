@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   BrowserRouter,
   Routes,
@@ -47,6 +47,34 @@ import RegisterImg from '../../../images/tutorial_logo.png'
 import LoginImg from '../../../images/login.png'
   
 const Header = () => {
+
+  // const token = localStorage.getItem("token");
+
+  const logout = () => {
+    localStorage.clear();
+    window.location.href = '/login';
+  }
+
+  const [token, setToken] = useState(null)
+
+  useEffect(() => {
+    const data = localStorage.getItem("token");
+    if (token) {
+      setToken(data);
+    }
+  }, [])
+
+  const login = () => {
+    const user = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null; 
+    if (user?.isStudent) {
+      window.location.href = '/user/MainMenu';
+    } else if (user) {
+      window.location.href = '/tutor/MainMenu'
+    } else {
+      window.location.href = '/login';
+    }
+  }
+
   return (
         <BrowserRouter>
             <div className="main-header"> <img src={HeaderImg} alt="main-header-2" width="100%" height={120} /></div>
@@ -57,7 +85,7 @@ const Header = () => {
                 <div className="benefits"> <img src={BenefitImg} alt="benefits" width={50} height={50} /><Link to="/Benefits">Benefits</Link></div>
                 <div className="becomeTutor"><img src={TutorialImg} alt="tutorial" width={50} height={50} /><Link to="/BecomeTutor">Become Tutor</Link></div>
                 <div className="register"> <img src={RegisterImg} alt="register" width={50} height={50} /><Link to="/Signup">Register</Link></div>
-                <div className="login"> <img src={LoginImg} alt="login" width={50} height={50} /><Link to="/login">Login</Link></div>
+                {token ?(<div className="login" onClick={logout}> <img src={LoginImg} alt="login" width={50} height={50} />Logout</div>) : (<div className="login" onClick={login}> <img src={LoginImg} alt="login" width={50} height={50} />Login</div>)}
             </div>
             <Routes>
                 <Route path="/" element={<Home />} />
