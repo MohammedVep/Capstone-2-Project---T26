@@ -27,8 +27,7 @@ app.use("/management", managementRoutes);
 app.use("/students", studentsRoutes);
 
 const PORT = process.env.PORT || 9000;
-mongoose.
-    connect('mongodb+srv://Team26:pwercfLdwe24=vN$@@cluster0.fm45zrm.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://Team26:pwercfLdwe24@cluster0.fm45zrm.mongodb.net/?retryWrites=true&w=majority', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
 }).then(() => {
