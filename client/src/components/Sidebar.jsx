@@ -150,7 +150,7 @@ const Sidebar = ({
                                     </Typography>
                                 )
                             }
-                            const lcText = text.toLoverCase();
+                            const lcText = text.toLowerCase();
 
                             return (
                                 <ListItem key={text} disablePadding>
