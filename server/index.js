@@ -10,6 +10,9 @@ import generalRoutes from './routes/general.js';
 import managementRoutes from './routes/management.js';
 import studentsRoutes from './routes/student.js';
 
+// data imports
+import User from "./models/User.js";
+import { dataUser } from "./data/index.js";
 
 dotenv.config();
 const app = express();
@@ -26,10 +29,15 @@ app.use("/general", generalRoutes);
 app.use("/management", managementRoutes);
 app.use("/students", studentsRoutes);
 
+
+
 const PORT = process.env.PORT || 9000;
 mongoose.connect('mongodb+srv://Team26:pwercfLdwe24@cluster0.fm45zrm.mongodb.net/?retryWrites=true&w=majority', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
 }).then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`))
+
+    /* Only add data one time */
+    //User.insertMany(dataUser);
 }).catch((error) => console.log(`${error} did not connect`))
