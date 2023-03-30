@@ -29,9 +29,9 @@ const Signup = () => {
     try {
       const url = "http://localhost:4000/api/user/signup";
       const { data: res } = await axios.post(url, data);
-      localStorage.setItem("user", JSON.stringify(res.data));
+      localStorage.setItem("user", JSON.stringify(res));
       navigate("/Payment");
-      console.log(res.message);
+      console.log(res);
     } catch (error) {
       if (
         error.response &&

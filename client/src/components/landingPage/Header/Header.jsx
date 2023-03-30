@@ -88,7 +88,7 @@ const Header = () => {
                 {token ?(<div className="login" onClick={logout}> <img src={LoginImg} alt="login" width={50} height={50} />Logout</div>) : (<div className="login" onClick={login}> <img src={LoginImg} alt="login" width={50} height={50} />Login</div>)}
             </div>
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" exact element={<Home />} />
                 <Route path="/user/Profile" element={<UserProfile />} />
                 <Route path="/About" element={<About />} />
                 <Route path="/Features" element={<Features />}/>

@@ -13,7 +13,7 @@ router.post("/signup", async (req, res) => {
     }
 
 
-    const user = await User.findOne({ email: req.body.email });
+    let user = await User.findOne({ email: req.body.email });
     if (user) {
       return res.status(401).send("User already registered.");
     }
@@ -21,8 +21,8 @@ router.post("/signup", async (req, res) => {
     const salt = await bcrypt.genSalt(Number(process.env.SALT));
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
-    await new User({ ...req.body, password: hashedPassword }).save();
-    res.status(201).send({ message: "User registered successfully." });
+    user = await new User({ ...req.body, password: hashedPassword }).save();
+    res.status(201).send(user);
   } 
   catch (err) {
     res.status(500).send(err.message);
