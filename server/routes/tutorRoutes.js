@@ -35,7 +35,7 @@ router.post("/update", async (req, res) => {
     const update = {
       ...req.body,
     }
-    const doc = await User.findOneAndUpdate(filter, update);
+    const doc = await Tutor.findOneAndUpdate(filter, update);
     console.log('data', doc)
 
     const salt = await bcrypt.genSalt(Number(process.env.SALT));
