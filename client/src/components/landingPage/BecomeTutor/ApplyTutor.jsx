@@ -65,7 +65,7 @@ const ApplyTutor = () => {
             </div>
             <div className={styles.right}>
               <form className={styles.form_container} onSubmit={handleSubmit}>
-                <h1>Create Account</h1>
+                <h1>Create Account for tutor</h1>
     
                 <input
                   type="text"

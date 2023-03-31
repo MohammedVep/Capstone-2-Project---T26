@@ -84,7 +84,7 @@ const Header = () => {
                 <div className="pricing"> <img src={PricingImg} alt="price" width={50} height={50} /><Link to="/Pricing">Pricing</Link></div>  
                 <div className="benefits"> <img src={BenefitImg} alt="benefits" width={50} height={50} /><Link to="/Benefits">Benefits</Link></div>
                 <div className="becomeTutor"><img src={TutorialImg} alt="tutorial" width={50} height={50} /><Link to="/BecomeTutor">Become Tutor</Link></div>
-                <div className="register"> <img src={RegisterImg} alt="register" width={50} height={50} /><Link to="/Signup">Register</Link></div>
+                <div className="register"> <img src={RegisterImg} alt="register" width={50} height={50} /><Link to="/Signup">Register Student</Link></div>
                 {token ?(<div className="login" onClick={logout}> <img src={LoginImg} alt="login" width={50} height={50} />Logout</div>) : (<div className="login" onClick={login}> <img src={LoginImg} alt="login" width={50} height={50} />Login</div>)}
             </div>
             <Routes>
