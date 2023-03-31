@@ -25,7 +25,7 @@ const ApplyTutor = () => {
       const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const url = "https://t26-server.herokuapp.com/api/signup/tutor";
+          const url = "https://t26-server.herokuapp.com/api/tutor/signup";
           const { data: res } = await axios.post(url, data);
           localStorage.setItem("tutor", JSON.stringify(res.data));
 
