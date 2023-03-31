@@ -102,12 +102,12 @@ router.delete('/delete', async (req, res) => {
   const data =  req.data;
   console.log('data1', req.body);
   try {
-    const data = await Tutor.findOneAndDelete({email: req.body.email}, function (err, user) {
+    const data = await Tutor.findOneAndDelete({email: req.body.email}, function (err, tutor) {
         if (err) {
             console.log(err);
             res.status(201).send(err.message);
         }
-        if (!user){
+        if (!tutor){
           res.status(201).send("Tutor Not Found");
         }
         else {
