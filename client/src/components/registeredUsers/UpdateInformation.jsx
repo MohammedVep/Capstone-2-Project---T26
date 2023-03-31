@@ -14,7 +14,7 @@ const UpdateInformation = () => {
         ev.preventDefault();
         console.log("update")
         try {
-            const url = "http://localhost:4000/api/user/update";
+            const url = "https://t26-server.herokuapp.com/api/user/update";
             const { data: res } = await axios.post(url, user);
             
             

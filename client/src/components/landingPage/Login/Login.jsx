@@ -23,7 +23,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:4000/api/auth";
+      const url = "https://t26-server.herokuapp.com/api/auth";
       const { data: res } = await axios.post(url, data);
       console.log("res ===", res)
       localStorage.setItem("token", res.data);

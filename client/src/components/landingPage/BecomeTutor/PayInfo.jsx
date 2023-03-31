@@ -23,7 +23,7 @@ const PayInfo = () => {
       const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const url = "http://localhost:4000/api/tutor/update";
+          const url = "https://t26-server.herokuapp.com/api/tutor/update";
           const tutor = JSON.parse(localStorage.getItem("tutor"));
           const payload = {...data, id: tutor._id}
           const { data: res } = await axios.post(url, payload);

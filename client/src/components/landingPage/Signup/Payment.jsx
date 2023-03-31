@@ -26,7 +26,7 @@ const Payment = () => {
         console.log("Submitting payment")
         e.preventDefault();
         try {
-          const url = "http://localhost:4000/api/user/update-payment";
+          const url = "https://t26-server.herokuapp.com/api/user/update-payment";
           const user = JSON.parse(localStorage.getItem("user"));
           console.log('user', user)
           const payload = {

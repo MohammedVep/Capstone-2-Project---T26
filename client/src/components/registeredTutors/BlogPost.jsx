@@ -11,7 +11,7 @@ const BlogPost = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:4000/api/blogpost/create";
+      const url = "https://t26-server.herokuapp.com/api/blogpost/create";
       const { data: res } = await axios.post(url, blogPost);
       navigate("/MainMenu");
     } catch (error) {

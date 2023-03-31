@@ -53,7 +53,7 @@ const Profile = () => {
       const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const url = "http://localhost:4000/api/profile/create";
+          const url = "https://t26-server.herokuapp.com/api/profile/create";
           const { data: res } = await axios.post(url, profileInfo);
           navigate("/MainMenu");
         } catch (error) {

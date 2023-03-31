@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { Tutor, validateTutor } = require("../models/registeredTutorsModel.js");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 
 // REGISTER TUTOR

@@ -27,7 +27,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:4000/api/user/signup";
+      const url = "https://t26-server.herokuapp.com/api/user/signup";
       const { data: res } = await axios.post(url, data);
       localStorage.setItem("user", JSON.stringify(res));
       navigate("/Payment");

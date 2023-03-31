@@ -21,7 +21,7 @@ const MainMenu = () => {
     const [error, setErrors] = useState("");
     const userSignout = async () => {
         try {
-          const url = "http://localhost:4000/api/user/signout";
+          const url = "https://t26-server.herokuapp.com/api/user/signout";
           const { data: res } = await axios.get(url);
           localStorage.clear();
           navigate("/");
@@ -40,7 +40,7 @@ const MainMenu = () => {
 
     const onCloseAccount = async () => {
         try {
-            const url = "http://localhost:4000/api/user/delete";
+            const url = "https://t26-server.herokuapp.com/api/user/delete";
             console.log("onCloseAccount")
             const user = JSON.parse(localStorage.getItem('user'))
 

@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { Tutor } = require("../models/registeredTutorsModel");
 const Joi = require("joi");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const { User } = require("../models/registeredUsersModel");
 
 router.post("/auth", async (req, res) => {
