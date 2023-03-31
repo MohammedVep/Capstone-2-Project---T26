@@ -28,12 +28,23 @@ router.post("/signup", async (req, res) => {
   }
 });
 
-router.post("/tutor/update", async (req, res) => {
+router.post("/update", async (req, res) => {
   try {
-    const tutor = await Tutor.findOneAndUpdate({ _id: req.body.id}, req.body);
-    res.status(201).send({ message: "Tutor updated successfully."});
+    const filter= {email: req.body.email}
+    console.log('filter', filter)
+    const update = {
+      ...req.body,
+    }
+    const doc = await User.findOneAndUpdate(filter, update);
+    console.log('data', doc)
+
+    const salt = await bcrypt.genSalt(Number(process.env.SALT));
+    const hashedPassword = await bcrypt.hash(req.body.password, salt);
+    await doc.update({password: hashedPassword});
+
+    res.status(201).json(doc);
   } catch (error) {
-    res.status(500).send(err.message);
+    res.status(500).json({ data });
   }
 });
 
