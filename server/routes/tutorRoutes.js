@@ -28,6 +28,18 @@ router.post("/signup", async (req, res) => {
   }
 });
 
+router.post("/update-pay", async (req, res) => {
+  try {
+    const update= req.body
+    console.log('update', update)
+    const tutor = await Tutor.findOneAndUpdate({_id: req.body.id}, update);
+    console.log('update3', tutor)
+    res.status(201).send({ message: "Tutor updated successfully.", data: tutor });
+  } catch (error) {
+    res.status(500).send(err.message);
+  }
+})
+
 router.post("/update", async (req, res) => {
   try {
     const filter= {email: req.body.email}
