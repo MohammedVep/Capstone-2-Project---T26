@@ -89,7 +89,7 @@ router.delete('/tutor/:id', async (req, res) => {
     }
  });
 
- router.get('/tutor/signout',  (req, res) => {
+ router.get('/signout',  (req, res) => {
   try {
     res.status(201).send({ message: "tutor logged out successfully." });  
   } catch (error) {
