@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 
 
 // REGISTER TUTOR
-router.post("/signup/tutor", async (req, res) => {
+router.post("/signup", async (req, res) => {
   try {
     const { error } = validateTutor(req.body);
     if (error) {
