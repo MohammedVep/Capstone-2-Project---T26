@@ -1,15 +1,14 @@
 import React from 'react'
+import './Pricing.css';
 
 const Pricing = () => {
   return (
     <>
-      <div className="main">
+      <div className="pricing_main">
         <h1 className='pricing'>Pricing</h1>
-        <p className='pricing-info'>Our products are most affortable for our students</p>
-        <br />
-        <p className='pricing-info'>We strive to keep our prices as low as possible for our students wih $5/m. 
-          <br />
-        </p><table className="price">
+        <p className='pricing-info'>Our products are most affordable for our students</p>
+        <p className='pricing-info'>We strive to keep our prices as low as possible for our students wih $5/m.</p>
+        <table className="price">
           <thead className="price-head">
             <tr className='price-head-row'><th className='price-head-data'>Type</th>
               <th>Price</th>

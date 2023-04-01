@@ -7,7 +7,7 @@ import UpdateInformation from './UpdateInformation';
 import HelpStudent from './HelpStudent';
 import CloseAccount from './CloseAccount';
 import ChatApp from './ChatApp';
-
+import "./TutorMainMenu.css"
 
 import {
     BrowserRouter,
@@ -16,7 +16,7 @@ import {
     Link
 } from "react-router-dom";
 
-const MainMenu = () => {
+const TutorMainMenu = () => {
     const navigate = useNavigate();
     const [error, setErrors] = useState("");
     const onSignout = async () => {
@@ -116,9 +116,9 @@ const MainMenu = () => {
                     <Route path="/CloseAccount" element={<CloseAccount />}/>
                 </Routes> */}
             {/* </BrowserRouter> */}
-            
+
         </>
   )
 }
 
-export default MainMenu
+export default TutorMainMenu

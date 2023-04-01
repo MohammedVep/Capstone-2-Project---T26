@@ -16,7 +16,7 @@ import {
     Link
 } from "react-router-dom";
 
-const MainMenu = () => {
+const UserMainMenu = () => {
     const navigate = useNavigate();
     const [error, setErrors] = useState("");
     const userSignout = async () => {
@@ -63,7 +63,7 @@ const MainMenu = () => {
   return (
         <>
             {/* <BrowserRouter> */}
-                <h1 className="page-title">Welcome back student</h1>
+                <h1 className="page-title">Welcome back Student</h1>
                 <br />
                 <div className="component justify-content-center">
                     <table className="main-menu">
@@ -122,4 +122,4 @@ const MainMenu = () => {
   )
 }
 
-export default MainMenu
+export default UserMainMenu

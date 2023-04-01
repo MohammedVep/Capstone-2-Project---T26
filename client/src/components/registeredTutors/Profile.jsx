@@ -3,13 +3,14 @@ import { useNavigate } from "react-router-dom";
 import {ref, getDownloadURL, uploadBytesResumable} from 'firebase/storage'
 import {storage} from '../../firebase'
 import axios from "axios";
+import "./TutorProfile.css"
 import {
     BrowserRouter,
     Routes,
     Route,
     Link
 } from "react-router-dom"
-import MainMenu from './MainMenu'
+import TutorMainMenu from './TutorMainMenu'
 
 const Profile = () => {
     const navigate = useNavigate();
@@ -55,7 +56,7 @@ const Profile = () => {
         try {
           const url = "https://t26-server.herokuapp.com/api/profile/create";
           const { data: res } = await axios.post(url, profileInfo);
-          navigate("/MainMenu");
+          navigate("/TutorMainMenu");
         } catch (error) {
           if (
             error.response &&
@@ -109,7 +110,7 @@ const Profile = () => {
                 </form>
             </div>
             <Routes>
-                <Route path="/" element={<MainMenu />}/>
+                <Route path="/" element={<TutorMainMenu />}/>
             </Routes>
         
     </>

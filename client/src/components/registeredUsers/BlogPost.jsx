@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
-import MainMenu from './MainMenu'
+import TutorMainMenu from './UserMainMenu'
 import axios from "axios";
 import {Link} from "react-router-dom"
+import "./BlogPost.css"
 
 const BlogPost = () => {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ const BlogPost = () => {
     try {
       const url = "https://t26-server.herokuapp.com/api/blogpost/create";
       const { data: res } = await axios.post(url, blogPost);
-      navigate("/MainMenu");
+      navigate("/TutorMainMenu");
     } catch (error) {
       if (
         error.response &&
@@ -40,15 +41,11 @@ const BlogPost = () => {
         <form onSubmit={handleSubmit} className="text-center">
           <label htmlFor="title" className="form-name">Title: </label>
           <input type="text" id="title" name="title" onChange={handleChange}/>
-          <br />
-          <label htmlFor="post" className="form-name">Content: </label>
+          <label htmlFor="post" className="form-name"></label>
           <textarea id="post" name="post" rows={20} cols={50} defaultValue={"Enter Content"}  onChange={handleChange}/>
-          <br />
           <input className="btn btn-primary" type="submit" defaultValue="save" />
-          <a className="btn btn-primary" role="button"><Link to="/MainMenu">Cancel</Link></a>
-
+            <a className="btn btn-danger" role="button"><Link to="/user/TutorMainMenu">Cancel</Link></a>
         </form>
-          
       </div>
     </>
   );

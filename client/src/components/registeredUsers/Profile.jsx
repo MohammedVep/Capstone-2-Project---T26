@@ -9,7 +9,7 @@ import {
     Route,
     Link
 } from "react-router-dom"
-import MainMenu from './MainMenu'
+import UserMainMenu from './UserMainMenu'
 
 const Profile = () => {
     const navigate = useNavigate();
@@ -55,7 +55,7 @@ const Profile = () => {
         try {
           const url = "https://t26-server.herokuapp.com/api/profile/create";
           const { data: res } = await axios.post(url, profileInfo);
-          navigate("/MainMenu");
+          navigate("/TutorMainMenu");
         } catch (error) {
           if (
             error.response &&
@@ -109,7 +109,7 @@ const Profile = () => {
                 </form>
             </div>
             <Routes>
-                <Route path="/" element={<MainMenu />}/>
+                <Route path="/" element={<UserMainMenu />}/>
             </Routes>
         
     </>

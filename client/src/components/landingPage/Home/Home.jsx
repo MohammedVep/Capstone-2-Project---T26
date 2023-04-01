@@ -61,25 +61,10 @@ const Home = () => {
                      <li>  whiteboards to facilitate video chat that contain shapes,
                          drawing tools, diagrams for promoting visual learning.</li>
                </ul>
-                
-                           
             </div>
           </Col>
-        
         </Row>
       </Container>
-    
-      <div className="main">
-          
-            
-
-          
-
-            
-
-        
-            
-        </div>
     </>
   )
 }
