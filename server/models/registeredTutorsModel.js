@@ -16,15 +16,15 @@ const registeredTutorSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    educationalBackground: {
-        type: String,
-        required: true
-    },
     phone: {
         type: Number,
         required: true
     },
     password: {
+        type: String,
+        required: true
+    },
+    educationalBackground: {
         type: String,
         required: true
     },
@@ -86,6 +86,7 @@ const validateTutor = (Tutor) => {
         lastname: Joi.string().required().label('Last Name'),
         email: Joi.string().email().required().label('Email'),
         phone: Joi.number().required().label('Phone'),
+        educationalBackground: Joi.string.required.label('Educational Background'),
         password: paswordComplexity().required().label('Password')
     });
     return schema.validate(Tutor);
