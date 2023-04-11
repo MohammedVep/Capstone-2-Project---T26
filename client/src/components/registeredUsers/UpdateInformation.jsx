@@ -80,9 +80,9 @@ const UpdateInformation = () => {
                     <input type="text" id="cardExpYear" name="cardExpYear" onChange={handleChange}/>
 
                     <label htmlFor="cardExpCVV" className="form-name">CVV: </label>
-                    <input type="text" id="cardExpCVV" name="cardExpCVV" />
-                    <input className="btn btn-primary" type="submit" defaultValue="Update info" />
-                    <a className="btn btn-primary" role="button"><Link to="/TutorMainMenu">Cancel</Link></a>
+                    <input type="text" id="cardExpCVV" name="cardExpCVV" onChange={handleChange} />
+                    <input className="btn btn-primary" type="submit" defaultValue="Update info" onChange={handleChange}/>
+                    <a className="btn btn-primary" role="button"><Link to="/user/TutorMainMenu">Cancel</Link></a>
                 </form>
 
             </div>
