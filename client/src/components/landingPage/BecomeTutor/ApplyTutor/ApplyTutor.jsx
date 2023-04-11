@@ -62,6 +62,14 @@ const ApplyTutor = () => {
     }
   }
 
+  const validateEducationalBackground = (_, value) => {
+    if (!value) {
+      return Promise.reject("Please specifiy educational background")
+    } else {
+      return Promise.resolve()
+    }
+  }
+
   const validatePhone = (_, value) => {
     if (!value) {
       return Promise.reject("Please enter your phone number");
@@ -146,6 +154,9 @@ const ApplyTutor = () => {
               </Form.Item>
               <Form.Item name="email" rules={[{ validator: validateEmail }]}>
                 <Input placeholder="Email" className={styles.input} />
+              </Form.Item>
+              <Form.Item name="educationalBackground" rules={[{validator: validateEducationalBackground}]}>
+                <Input placeholder="Educational Background" className={styles.input} />
               </Form.Item>
 
               <Form.Item

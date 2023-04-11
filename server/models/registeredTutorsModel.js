@@ -16,6 +16,10 @@ const registeredTutorSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    educationalBackground: {
+        type: String,
+        required: true
+    },
     phone: {
         type: Number,
         required: true

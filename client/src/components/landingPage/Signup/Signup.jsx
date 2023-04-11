@@ -60,6 +60,16 @@ const Signup = () => {
     }
   }
 
+  const validateInterest = (_, value) => {
+    if (!value) {
+      return Promise.reject("Please specify your area of expertise");
+    } else if (!/^[a-zA-Z]+$/i.test(value)) {
+      return Promise.reject("Please enter only letters");
+    } else {
+      return Promise.resolve();
+    }
+  }
+
   const validateLastName = (_, value) => {
     if (!value) {
       return Promise.reject("Please enter your last name");
@@ -159,7 +169,9 @@ const Signup = () => {
                 <Form.Item name="email" rules={[{ validator: validateEmail }]}>
                   <Input placeholder="Email" className={styles.input} />
                 </Form.Item>
-
+                <Form.Item name="interest" rules={[{ validator: validateInterest}]}>
+                  <Input placeholder="Specify Interest" className={styles.input} />
+                </Form.Item>
                 <Form.Item
                     name="password"
                     rules={[{ validator: validatePassword }]}

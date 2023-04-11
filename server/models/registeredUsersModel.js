@@ -24,6 +24,10 @@ const registeredUsersSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    interest: {
+        type: String,
+        required: true
+    },
     password: {
         type: String,
         required: true
