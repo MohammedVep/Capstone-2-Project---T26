@@ -42,10 +42,10 @@ const TutorMainMenu = () => {
         try {
             const url = "https://t26-server.herokuapp.com/api/tutor/delete";
             console.log("onCloseAccount")
-            const user = JSON.parse(localStorage.getItem('user'))
+            const tutor = JSON.parse(localStorage.getItem('tutor'))
 
-            console.log("user", user)
-            const { data: res } = await axios.delete(url, {data: {email : user.email}});
+            console.log("tutor", tutor)
+            const { data: res } = await axios.delete(url, {data: {email : tutor.email}});
             localStorage.clear();
             navigate("/");
           } catch (error) {
