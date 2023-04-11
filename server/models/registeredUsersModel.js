@@ -96,6 +96,7 @@ const validateUser = (User) => {
         lastname: Joi.string().required().label('Last Name'),
         email: Joi.string().email().required().label('Email'),
         phone: Joi.number().required().label('Phone'),
+        interest: Joi.string().required().label('Interest'),
         password: paswordComplexity().required().label('Password')
     });
     return schema.validate(User);

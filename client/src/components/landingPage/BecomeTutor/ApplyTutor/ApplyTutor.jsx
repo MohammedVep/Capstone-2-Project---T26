@@ -65,8 +65,6 @@ const ApplyTutor = () => {
   const validateEducationalBackground = (_, value) => {
     if (!value) {
       return Promise.reject("Please specifiy educational background")
-    } else if (!/^[a-zA-Z]+$/i.test(value)) {
-      return Promise.reject("Please enter only letters");
     } else {
       return Promise.resolve()
     }

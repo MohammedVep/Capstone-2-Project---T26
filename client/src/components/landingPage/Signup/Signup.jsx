@@ -63,8 +63,6 @@ const Signup = () => {
   const validateInterest = (_, value) => {
     if (!value) {
       return Promise.reject("Please specify your area of expertise");
-    } else if (!/^[a-zA-Z]+$/i.test(value)) {
-      return Promise.reject("Please enter only letters");
     } else {
       return Promise.resolve();
     }
