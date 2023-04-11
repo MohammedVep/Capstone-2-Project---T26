@@ -86,7 +86,7 @@ const validateTutor = (Tutor) => {
         lastname: Joi.string().required().label('Last Name'),
         email: Joi.string().email().required().label('Email'),
         phone: Joi.number().required().label('Phone'),
-        educationalBackground: Joi.string.required().label('Educational Background'),
+        educationalBackground: Joi.string().required().label('Educational Background'),
         password: paswordComplexity().required().label('Password')
     });
     return schema.validate(Tutor);
