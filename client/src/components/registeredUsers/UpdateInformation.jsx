@@ -82,7 +82,7 @@ const UpdateInformation = () => {
                     <label htmlFor="cardExpCVV" className="form-name">CVV: </label>
                     <input type="text" id="cardExpCVV" name="cardExpCVV" />
                     <input className="btn btn-primary" type="submit" defaultValue="Update info" />
-                    <a className="btn btn-primary" role="button"><Link to="/user/TutorMainMenu">Cancel</Link></a>
+                    <a className="btn btn-primary" role="button"><Link to="/TutorMainMenu">Cancel</Link></a>
                 </form>
 
             </div>

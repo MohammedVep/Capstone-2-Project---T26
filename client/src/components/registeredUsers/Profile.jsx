@@ -104,7 +104,7 @@ const Profile = () => {
                 <br />
                 <input className="btn btn-primary" type="submit" defaultValue="save" />
                 <a className="btn btn-primary" role="button">
-                    <Link to="/">Cancel</Link>
+                    <Link to="/TutorMainMenu">Cancel</Link>
                 </a>
                 </form>
             </div>

@@ -53,7 +53,7 @@ const UpdateInformation = () => {
                 <input type="text" id="branchN" name="branchN" />
 
                 <input className="btn btn-primary" type="submit" defaultValue="Update info" />
-                  <a className="btn btn-primary" role="button"><Link to="/tutor/TutorMainMenu">Cancel</Link></a>
+                  <a className="btn btn-primary" role="button"><Link to="/TutorMainMenu">Cancel</Link></a>
               </form>
             </div>
     </>
