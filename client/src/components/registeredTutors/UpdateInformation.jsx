@@ -17,7 +17,7 @@ const UpdateInformation = () => {
     try {
       const url = "https://t26-server.herokuapp.com/api/tutor/update";
       const { data: res } = await axios.post(url, user);
-      navigate("/TutorMainMenu");
+      navigate("/tutor/TutorMainMenu");
 
     } catch (error) {
       if (

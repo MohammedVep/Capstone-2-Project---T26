@@ -55,7 +55,7 @@ const Profile = () => {
         try {
           const url = "https://t26-server.herokuapp.com/api/profile/create";
           const { data: res } = await axios.post(url, profileInfo);
-          navigate("/TutorMainMenu");
+          navigate("/user/TutorMainMenu");
         } catch (error) {
           if (
             error.response &&

@@ -14,7 +14,7 @@ const BlogPost = () => {
     try {
       const url = "https://t26-server.herokuapp.com/api/blogpost/create";
       const { data: res } = await axios.post(url, blogPost);
-      navigate("/TutorMainMenu");
+      navigate("/user/TutorMainMenu");
     } catch (error) {
       if (
         error.response &&
