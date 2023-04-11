@@ -21,7 +21,7 @@ const Profile = () => {
     const [file, setFile] = useState('')
     const [error, setErrors] = useState("");
     const handleChange = ({ currentTarget: input }) => {
-        console.log(input.name )
+        console.log('handle change', input.name)
         
         if (input.name == 'image' ){
             const file = input.files[0]
@@ -75,11 +75,11 @@ const Profile = () => {
             <div className="component">
                 <form onSubmit={handleSubmit} className="text-center">
                 <div className="profile-pic">
-                <label className="-label" htmlFor="file">
+                {/* <label className="-label" htmlFor="file">
                     <span className="glyphicon glyphicon-camera" />
                     <span>Change Profile picture</span>
-                </label>
-                <input id="image" name="image" accept='image/*' type="file" onChange={handleChange} />
+                </label> */}
+                <input id="image" name="image" type="file" onChange={handleChange} />
                 <img src="../../public/imgs/Profile_Picture.jpg" id="output" width={200} />
                 <br />
                 </div>

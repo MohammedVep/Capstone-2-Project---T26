@@ -39,6 +39,7 @@ const UserMainMenu = () => {
     }
 
     const onCloseAccount = async () => {
+      
         try {
             const url = "https://t26-server.herokuapp.com/api/user/delete";
             console.log("onCloseAccount")

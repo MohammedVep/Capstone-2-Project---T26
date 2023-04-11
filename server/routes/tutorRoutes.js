@@ -71,16 +71,16 @@ router.get("/tutor/result", async (req, res) => {
   }
 });
 
-router.delete('/tutor/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
-     const data = await Tutor.findByIdAndDelete(id, function (err, Tutor) {
+     const data = await Tutor.findByIdAndDelete(id, function (err, tutor) {
          if (err) {
              console.log(err);
              res.status(500).send(err.message);
          }
          else {
              console.log("User deleted successfully");
-             res.status(201).send("Tutor deleted");
+             res.status(201).send({message: "Tutor deleted", data: tutor});
          }
      })
      res.status(201).json(data)
@@ -112,7 +112,7 @@ router.delete('/delete', async (req, res) => {
         }
         else {
             console.log("Tutor deleted successfully");
-            res.status(201).send("Tutor deleted");
+            res.status(201).send({message: "Tutor deleted", data: tutor});
         }
     })
    } catch (error) {

@@ -74,16 +74,16 @@ router.post("/update", async (req, res) => {
   }
 })
 
-router.delete('/user/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
    try {
-    const data = await User.findByIdAndDelete(id, function (err, User) {
+    const data = await User.findByIdAndDelete(id, function (err, user) {
         if (err) {
             console.log(err);
             res.status(500).send(err.message);
         }
         else {
             console.log("User deleted successfully");
-            res.status(201).send("User deleted");
+            res.status(201).send({message: "User deleted", data: user});
         }
     })
     res.status(201).json(data);
@@ -115,7 +115,7 @@ router.delete('/delete', async (req, res) => {
         }
         else {
             console.log("User deleted successfully");
-            res.status(201).send("User deleted");
+            res.status(201).send({message: "User deleted", data: user});
         }
     })
    } catch (error) {
