@@ -4,14 +4,9 @@ import {Link, useNavigate} from 'react-router-dom';
 import "./UserUpdateInformation.css";
 
 const UpdateInformation = () => {
-    const[value, setValue] = React.useState('province');
     const [error, setErrors] = useState("");
     const [user, setUser] = useState()
     const navigate = useNavigate();
-    const handleChange = ({ currentTarget: input }) => {
-        setUser({ ...user, [input.name]: input.value });
-    };
-
     const handleFormSubmit = async (ev) => {
         ev.preventDefault();
         console.log("update")
@@ -31,6 +26,9 @@ const UpdateInformation = () => {
             }
           }
     };
+    const handleChange = ({ currentTarget: input }) => {
+      setUser({ ...user, [input.name]: input.value });
+  };
   return (
     <>
         <h1 className="page-title">Update Information</h1>
@@ -81,7 +79,7 @@ const UpdateInformation = () => {
 
                     <label htmlFor="cardExpCVV" className="form-name">CVV: </label>
                     <input type="text" id="cardExpCVV" name="cardExpCVV" onChange={handleChange} />
-                    <input className="btn btn-primary" type="submit" defaultValue="Update info" onChange={handleChange}/>
+                    <input className="btn btn-primary" type="submit" defaultValue="save" />
                     <a className="btn btn-primary" role="button"><Link to="/user/TutorMainMenu">Cancel</Link></a>
                 </form>
 

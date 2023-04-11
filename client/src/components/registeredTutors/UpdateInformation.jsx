@@ -7,10 +7,6 @@ const UpdateInformation = () => {
   const [error, setErrors] = useState("");
   const [tutor, setTutor] = useState();
   const navigate = useNavigate();
-  const handleChange = ({ currentTarget: input }) => {
-    setTutor({ ...tutor, [input.name]: input.value });
-  };
-
   const handleFormSubmit = async (ev) => {
     ev.preventDefault();
     console.log("update")
@@ -30,6 +26,10 @@ const UpdateInformation = () => {
       }
     }
   };
+  const handleChange = ({ currentTarget: input }) => {
+    setTutor({ ...tutor, [input.name]: input.value });
+  };
+
 
   return (
     <>
@@ -76,7 +76,7 @@ const UpdateInformation = () => {
           <label htmlFor="branchN" className="form-name">Branch Number: </label>
           <input type="text" id="branchN" name="branchN" onChange={handleChange} />
 
-          <input className="btn btn-primary" type="submit" defaultValue="Update info" />
+          <input className="btn btn-primary" type="submit" defaultValue="save" />
           <a className="btn btn-primary" role="button"><Link to="/tutor/TutorMainMenu">Cancel</Link></a>
         </form>
       </div>
