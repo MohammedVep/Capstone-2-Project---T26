@@ -98,16 +98,17 @@ router.delete('/:id', async (req, res) => {
 })
 
 
-router.delete('/delete', async (req, res) => {
-  const data =  req.data;
+router.delete('/delete', (req, res) => {
   console.log('data1', req.body);
   try {
-    const data = await Tutor.findOneAndDelete({email: req.body.email}, function (err, tutor) {
+      Tutor.findByIdAndDelete({_id: req.body._id}, function (err, tutor) {
+        console.log("got here!!!");
         if (err) {
             console.log(err);
             res.status(201).send(err.message);
         }
         if (!tutor){
+          console.log("tutor got here", tutor);
           res.status(201).send("Tutor Not Found");
         }
         else {

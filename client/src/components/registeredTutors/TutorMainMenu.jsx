@@ -45,7 +45,7 @@ const TutorMainMenu = () => {
             const tutor = JSON.parse(localStorage.getItem('tutor'))
 
             console.log("tutor", tutor)
-            const { data: res } = await axios.delete(url, {data: {email : tutor.email}});
+            const { data: res } = await axios.delete(url, {data: {_id : tutor._id}});
             localStorage.clear();
             navigate("/");
           } catch (error) {
