@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import "./TutorUpdateInformation.css"
-import { Link } from "react-router-dom";
+import {Link, useNavigate} from 'react-router-dom';
+import axios from "axios";
 
 const UpdateInformation = () => {
-  const [user, setUser] = useState()
+  const [error, setErrors] = useState("");
+  const [user, setUser] = useState();
+  const navigate = useNavigate();
   const handleChange = ({ currentTarget: input }) => {
     setUser({ ...user, [input.name]: input.value });
   };
