@@ -5,10 +5,10 @@ import axios from "axios";
 
 const UpdateInformation = () => {
   const [error, setErrors] = useState("");
-  const [user, setUser] = useState();
+  const [tutor, setTutor] = useState();
   const navigate = useNavigate();
   const handleChange = ({ currentTarget: input }) => {
-    setUser({ ...user, [input.name]: input.value });
+    setTutor({ ...tutor, [input.name]: input.value });
   };
 
   const handleFormSubmit = async (ev) => {
@@ -16,7 +16,7 @@ const UpdateInformation = () => {
     console.log("update")
     try {
       const url = "https://t26-server.herokuapp.com/api/tutor/update";
-      const { data: res } = await axios.post(url, user);
+      const { data: res } = await axios.post(url, tutor);
       navigate("/tutor/TutorMainMenu");
 
     } catch (error) {
